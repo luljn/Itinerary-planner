@@ -145,7 +145,7 @@ DEPART,
 		contraintes.gridy = 0;
 		jpConteneurOuest.add(jlDepart, contraintes);
 		
-		// Ajout de la ComboBox de la ville départ
+		// Ajout de la ComboBox de la ville dï¿½part
 		jcbVilleDepart = new JComboBox();
 		jcbVilleDepart.setName("jcbVilleDepart");
 		jcbVilleDepart.setPreferredSize(new Dimension(175,20));
@@ -155,7 +155,7 @@ DEPART,
 		contraintes.gridy = 1;
 		jpConteneurOuest.add(jcbVilleDepart, contraintes);
 		
-		// Ajout de la ComboBox de la rue de départ
+		// Ajout de la ComboBox de la rue de dï¿½part
 		jcbRueDepart = new JComboBox();
 		jcbRueDepart.setName("jcbRueDepart");
 		jcbRueDepart.setPreferredSize(new Dimension(175,20));
@@ -163,7 +163,7 @@ DEPART,
 		contraintes.gridy = 2;
 		jpConteneurOuest.add(jcbRueDepart, contraintes);
 		
-		// Ajout de la ComboBox du point de départ
+		// Ajout de la ComboBox du point de dï¿½part
 		jcbPointDepart = new JComboBox();
 		jcbPointDepart.setPreferredSize(new Dimension(175,20));
 		contraintes.gridx = 1;
@@ -177,7 +177,7 @@ DEPART,
 		contraintes.gridy = 0;		
 		jpConteneurOuest.add(jlArrivee, contraintes);
 		
-		// Ajout de la ComboBox de la ville d'arrivée
+		// Ajout de la ComboBox de la ville d'arrivï¿½e
 		jcbVilleArrivee = new JComboBox();
 		jcbVilleArrivee.setName("jcbVilleArrivee");
 		jcbVilleArrivee.setPreferredSize(new Dimension(175,20));
@@ -185,7 +185,7 @@ DEPART,
 		contraintes.gridy = 1;
 		jpConteneurOuest.add(jcbVilleArrivee, contraintes);
 		
-		// Ajout de la ComboBox de la rue d'arrivée
+		// Ajout de la ComboBox de la rue d'arrivï¿½e
 		jcbRueArrivee = new JComboBox();
 		jcbRueArrivee.setName("jcbRueArrivee");
 		jcbRueArrivee.setPreferredSize(new Dimension(175,20));
@@ -193,7 +193,7 @@ DEPART,
 		contraintes.gridy = 2;
 		jpConteneurOuest.add(jcbRueArrivee, contraintes);
 		
-		// Ajout de la ComboBox du point de départ
+		// Ajout de la ComboBox du point de dï¿½part
 		jcbPointArrivee = new JComboBox();
 		jcbPointArrivee.setPreferredSize(new Dimension(175,20));
 		contraintes.gridx = 2;
@@ -201,7 +201,7 @@ DEPART,
 		jpConteneurOuest.add(jcbPointArrivee, contraintes);
 		
 		// Bouton pour valider la requete
-		jbOk = new JButton("Go");
+		jbOk = new JButton("Voir l'itinÃ©raire");
 		jbOk.setFont(new Font(jbOk.getFont().getFontName(), Font.BOLD, 15));
 		jbOk.setName("jbOk");
 		contraintes.gridx = 3;
@@ -233,9 +233,9 @@ DEPART,
 		contraintes.gridwidth = 1;
 		
 		// Boutton pour Zoomer
-		jbZoomPlus = new JButton();
+		jbZoomPlus = new JButton(new ImageIcon("img/loupe_plus.gif"));
 		jbZoomPlus.setName("jbZoomPlus");
-		jbZoomPlus.setText("+");
+		// jbZoomPlus.setText("+");
 		jbZoomPlus.setPreferredSize(new Dimension(60, 60));
 		contraintes.gridx = 2;
 		contraintes.gridy = 1;
@@ -255,23 +255,23 @@ DEPART,
 		jpConteneurEst.add(jsZoom,contraintes);
 
 		// Boutton pour Dezoomer
-		jbZoomMoins = new JButton();
+		jbZoomMoins = new JButton(new ImageIcon("img/loupe_moins.gif"));
 		jbZoomMoins.setName("jbZoomMoins");
-		jbZoomMoins.setText("-");
+		// jbZoomMoins.setText("-");
 		jbZoomMoins.setPreferredSize(new Dimension(60, 60));
 		contraintes.gridx = 0;
 		contraintes.gridy = 1;
 		contraintes.anchor = GridBagConstraints.LINE_END;
 		jpConteneurEst.add(jbZoomMoins, contraintes);
 		
-		//Boutton pour avoir une vue d'ensemble (où on ne vois rien d'ailleurs)
+		//Boutton pour avoir une vue d'ensemble (oï¿½ on ne vois rien d'ailleurs)
 		jbZoomGlobal = new JButton("Vue Globale");
 		jbZoomGlobal.setName("jbZoomGlobal");
 		jbZoomGlobal.setPreferredSize(new Dimension(100, 20));	
 		contraintes.gridx = 0;
 		contraintes.gridy = 2;
 		contraintes.anchor = GridBagConstraints.CENTER;
-		//jpConteneurEst.add(jbZoomGlobal, contraintes);
+		jpConteneurEst.add(jbZoomGlobal, contraintes);
 		
 		// Boutton pour remettre le Zoom a la normale
 		jbZoomReel = new JButton("R\u00e9initialiser");
@@ -289,7 +289,7 @@ DEPART,
 		contraintes.gridx = 2;
 		contraintes.gridy = 2;
 		contraintes.anchor = GridBagConstraints.CENTER;
-		//jpConteneurEst.add(jbZoomGrosPlan, contraintes);
+		jpConteneurEst.add(jbZoomGrosPlan, contraintes);
 		
 		// Creation du Layout general(de type BoxLayout)	
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));

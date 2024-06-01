@@ -38,7 +38,7 @@ public class Application {
 	public final static float ZOOM_MIN = (float)0.1;
 	
 	/** The Constant ZOOM_INITIAL. */
-	public final static float ZOOM_INITIAL = (float) 1;
+	public final static float ZOOM_INITIAL = (float) 0.5;
 	
 	/** The Constant CRAN_ZOOM_PLUS. */
 	public final static float CRAN_ZOOM_PLUS = (float) 0.1;
@@ -173,11 +173,12 @@ AUTRE};
 	 * Instantiates a new application.
 	 *
 	 * @param fichierXml the fichier xml
+	 * @param dossierData Le dossier qui contient le fichier xml et son image associée.
 	 */
-	public Application(String fichierXml, String DOSSIER_DATA) {
+	public Application(String fichierXml, String dossierData) {
 
 		this.fichierXML = fichierXml;
-		this.DOSSIER_DATA = DOSSIER_DATA;
+		this.DOSSIER_DATA = dossierData;
 		// Construction des diff�rents �l�ments de l'application
 		reseau_routier = new RoadNetwork();
 		reseau_routier.parseXml(DOSSIER_DATA + fichierXML);
