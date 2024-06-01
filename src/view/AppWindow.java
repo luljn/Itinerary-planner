@@ -13,7 +13,7 @@ import javax.swing.border.Border;
 @SuppressWarnings("serial")
 public class AppWindow extends JFrame{
 
-	//couleur du tracé ( commun a Carte et Contrôle )
+	//couleur du tracï¿½ ( commun a Carte et Contrï¿½le )
 	/** The Constant DefaultItineraireColor. */
 	public final static Color DefaultItineraireColor = Color.GREEN;
 	
@@ -23,7 +23,7 @@ public class AppWindow extends JFrame{
 	/** The INFO s_ largeur. */
 	private final int INFOS_LARGEUR = 250;
 	
-	// Dimensions de l'écran
+	// Dimensions de l'ï¿½cran
 	/** The dim ecran. */
 	private Dimension dimEcran;
     
@@ -101,17 +101,17 @@ public class AppWindow extends JFrame{
 		//MenuControler menuControler = new MenuControler();
 		//fileExportItinerary.addActionListener(menuControler);
 		
-		// Création du PanelControles
+		// Crï¿½ation du PanelControles
         h = CONTROLES_HAUTEUR;
         l = largeurUtil;
 		pnlCtrl = new PanelControls();
 		pnlCtrl.setPreferredSize(new Dimension(l, h));
-		getContentPane().add(pnlCtrl ,BorderLayout.NORTH);
+		getContentPane().add(pnlCtrl ,BorderLayout.SOUTH);
 		
-		// Création de la carte
+		// Crï¿½ation de la carte
 		Map carte = new Map(lienCarte, 40);
 		
-		// Création du PanelVue avec la carte
+		// Crï¿½ation du PanelVue avec la carte
 		h = hauteurUtil - CONTROLES_HAUTEUR;
 		l = largeurUtil - INFOS_LARGEUR;
 		pnlVue = new PanelView(carte);
@@ -119,21 +119,21 @@ public class AppWindow extends JFrame{
 		pnlVue.setBorder(coumpoundBorder);
 		getContentPane().add(pnlVue, BorderLayout.CENTER);
 		
-		// Création du PanelInformations
+		// Crï¿½ation du PanelInformations
 		l = INFOS_LARGEUR;
 		h = hauteurUtil;
 		pnlInfo = new PanelInformations(l, h, su);
 		pnlInfo.setPreferredSize(new Dimension(l,h));
 		getContentPane().add(pnlInfo ,BorderLayout.EAST);
 		
-		// Mise à la taille du bureau pour le mode fenêtre normal
+		// Mise ï¿½ la taille du bureau pour le mode fenï¿½tre normal
 		pack();
 		setLocation(insets.left, insets.top);
 		
 		// Mise en mode fenetre aggrandie
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        // Opération de fermeture
+        // Opï¿½ration de fermeture
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 

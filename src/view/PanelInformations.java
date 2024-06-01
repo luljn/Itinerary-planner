@@ -88,7 +88,7 @@ public class PanelInformations extends JPanel{
 		
 		//Init feuille route
 		dlmFeuilleRoute = new DefaultListModel();
-		jlFeuilleRoute = new JList(dlmFeuilleRoute);
+		jlFeuilleRoute = new JList<>(dlmFeuilleRoute);
 		
 		// Ajout de la liste scrollable d'informations
 		dlmInfos = new DefaultListModel();
@@ -107,7 +107,7 @@ public class PanelInformations extends JPanel{
 		lblFeuilleRoute = new JLabel("Feuille de route :");
 		lblFeuilleRoute.setFont(lblFeuilleRoute.getFont().deriveFont(Font.BOLD));
 		lblFeuilleRoute.setAlignmentX(Component.CENTER_ALIGNMENT);
-		//add(lblFeuilleRoute);
+		add(lblFeuilleRoute);
 		
 		// Ajout de la liste scrollable feuille de route
 		
@@ -119,7 +119,7 @@ public class PanelInformations extends JPanel{
 		jspFeuilleRoute.add(jlFeuilleRoute);
 		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)4/5)));
 		jspFeuilleRoute.setBorder(jspBorder);
-		jspFeuilleRoute.setVisible(false);
+		jspFeuilleRoute.setVisible(true);
 		add(jspFeuilleRoute);
 		
 		
@@ -168,6 +168,7 @@ public class PanelInformations extends JPanel{
 		message1 = mess1;
 		message2 = mess2;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -178,6 +179,7 @@ public class PanelInformations extends JPanel{
 	public void setLongueurTrajet(String longueur) {
 		longueur_trajet = longueur;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -192,6 +194,7 @@ public class PanelInformations extends JPanel{
 		this.y = y;
 		this.idPoint = idPoint;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -202,6 +205,7 @@ public class PanelInformations extends JPanel{
 	public void updateZoom(float zoom) {
 		this.zoom = zoom;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -212,6 +216,7 @@ public class PanelInformations extends JPanel{
 	public void updateDepart(int d) {
 		depart = d;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}	
 	
 	/**
@@ -222,6 +227,7 @@ public class PanelInformations extends JPanel{
 	public void updateArrivee(int a) {
 		arrivee = a;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -245,9 +251,16 @@ public class PanelInformations extends JPanel{
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
 		dlmInfos.addElement(new String("Itineraire: "));
-		for(Object s: dlmFeuilleRoute.toArray()){
-			dlmInfos.addElement(s);
-		}
+		// for(Object s: dlmFeuilleRoute.toArray()){
+		// 	dlmInfos.addElement(s);
+		// 	// dlmFeuilleRoute.addElement(s);
+		// }
+	}
+
+	private void refaireFeuilleDeRoute(){
+
+		// dlmFeuilleRoute.removeAllElements();
+		dlmFeuilleRoute.addElement("Hey Luljn ! :)");
 	}
 	
 	public ArrayList<String> getItinerary(){
