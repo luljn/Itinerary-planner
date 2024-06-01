@@ -52,7 +52,7 @@ public class Application {
 	public final static float RETOUR_ZOOM_INITIAL = -2;
 	
 	/** The DOSSIE r_ images. */
-	private final String DOSSIER_IMAGES = "img/";
+	private final String DOSSIER_IMAGES = "data/belfort_centre/";
 	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
