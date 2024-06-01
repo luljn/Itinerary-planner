@@ -7,12 +7,14 @@ import model.Application;;
  * @author Skeard
  */
 public class Main {
+
+    // private static Application app;
 	
 	/**
 	 * Creates the and show gui.
 	 */
 	public static void createAndShowGUI() {
-		new Application("data/belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+		new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
 	}
 	
     /**

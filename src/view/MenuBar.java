@@ -28,9 +28,8 @@ public class MenuBar extends JMenuBar {
 	 */
 	public MenuBar(){
 		super();
+
 		fileMenu = new JMenu("File");
-	
-		
 		exit = new JMenuItem("Exit");
 		fileExportItinerary = new JMenuItem("Export Itinerary");
 		fileChangeMap = new JMenuItem("Change Map");		

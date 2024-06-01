@@ -37,6 +37,10 @@ public class MenuController implements ActionListener {
 		if (itemName.equals("Export Itinerary")) {
 			app.saveExport();
 		}
+		// To change the current Map.
+		if(itemName.equals("Change Map")){
+			app.changeMap();
+		}
 		if(itemName.equals("Exit")){
 			app.close();
 		}

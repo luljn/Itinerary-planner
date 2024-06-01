@@ -12,8 +12,6 @@ import java.util.Vector;
 import static java.lang.Math.*;
 
 import javax.swing.*;
-import javax.swing.ImageIcon;
-import javax.swing.JColorChooser;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
@@ -40,7 +38,7 @@ public class Application {
 	public final static float ZOOM_MIN = (float)0.1;
 	
 	/** The Constant ZOOM_INITIAL. */
-	public final static float ZOOM_INITIAL = (float) 0.5;
+	public final static float ZOOM_INITIAL = (float) 1;
 	
 	/** The Constant CRAN_ZOOM_PLUS. */
 	public final static float CRAN_ZOOM_PLUS = (float) 0.1;
@@ -50,9 +48,6 @@ public class Application {
 	
 	/** The Constant RETOUR_ZOOM_INITIAL. */
 	public final static float RETOUR_ZOOM_INITIAL = -2;
-	
-	/** The DOSSIE r_ images. */
-	private final String DOSSIER_IMAGES = "data/belfort_centre/";
 	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
@@ -168,18 +163,26 @@ AUTRE};
 	
 	/** The old_zoom. */
 	private float old_zoom = ZOOM_INITIAL;
+
+	/** Le dossier qui contient le fichier xml et son image associée. */
+	private String DOSSIER_DATA;
+	//
+	private String fichierXML;
 	
 	/**
 	 * Instantiates a new application.
 	 *
 	 * @param fichierXml the fichier xml
 	 */
-	public Application(String fichierXml) {
+	public Application(String fichierXml, String DOSSIER_DATA) {
+
+		this.fichierXML = fichierXml;
+		this.DOSSIER_DATA = DOSSIER_DATA;
 		// Construction des diff�rents �l�ments de l'application
 		reseau_routier = new RoadNetwork();
-		reseau_routier.parseXml(fichierXml);
+		reseau_routier.parseXml(DOSSIER_DATA + fichierXML);
 		
-		lienCarte = DOSSIER_IMAGES + reseau_routier.getNomFichierImage();
+		lienCarte = DOSSIER_DATA + reseau_routier.getNomFichierImage();
 		new ImageIcon(lienCarte);
 		
 		
@@ -216,8 +219,8 @@ AUTRE};
 	 */
 	private void miseEnPlaceImages() {
 		fenetre.setIconImage(new ImageIcon("img/logoBelfort.gif").getImage());
-		//fenetre.getPanneauControles().setIconZoomMoins(new ImageIcon(DOSSIER_IMAGES + "loupe_moins.gif"));
-		//fenetre.getPanneauControles().setIconZoomPlus(new ImageIcon(DOSSIER_IMAGES + "loupe_plus.gif"));
+		//fenetre.getPanneauControles().setIconZoomMoins(new ImageIcon(DOSSIER_DATA + "loupe_moins.gif"));
+		//fenetre.getPanneauControles().setIconZoomPlus(new ImageIcon(DOSSIER_DATA + "loupe_plus.gif"));
 	}
 	
 	/**
@@ -474,7 +477,7 @@ AUTRE};
 							else {
 								gaucheDroite = "tout_droit";
 							}
-							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_IMAGES + "tourner_" + gaucheDroite + ".gif");
+							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_DATA + "tourner_" + gaucheDroite + ".gif");
 							lenTotale += lenRoute;
 							lenRoute = 0;
 						}
@@ -886,12 +889,56 @@ AUTRE};
 		aboutWindow.setVisible(true);
 		
 	}
+
+	/**
+	 * Change Map.
+	 */
+
+	// To change the current Map.
+	public void changeMap(){
+
+		this.fenetre.dispose();
+
+		if(getFichierXML() == "belfort_centre_1708_1572_SetOfStreets_version_GIS.xml" && getDossierData() == "data/belfort_centre/" ){
+
+			new Application("region_belfort_streets.xml", "data/region_belfort/");
+			// this.setFichierXML("region_belfort_streets.xml");
+			// this.setDossierData("data/region_belfort/");
+		}
+		
+		else if(getFichierXML() == "region_belfort_streets.xml" && getDossierData() == "data/region_belfort/" ){
+
+			new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
+			// this.setFichierXML("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.setDossierData("data/belfort_centre/");
+		}
+	}
 	
 	/**
 	 * Close.
 	 */
 	public void close(){
 		fenetre.dispose();
+	}
+
+	public String getDossierData(){
+
+		return this.DOSSIER_DATA;
+	}
+
+	public void setDossierData(String path){
+
+		this.DOSSIER_DATA = path;
+	}
+
+	public String getFichierXML(){
+
+		return this.fichierXML;
+	}
+
+	public void setFichierXML(String newFile){
+
+		this.fichierXML = newFile;
 	}
 }
 
