@@ -60,7 +60,7 @@ public class Application {
 	/** The ECHELL e_ taille. */
 	private final int ECHELLE_TAILLE = 30;
 	
-	// Constantes des coordonnées 
+	// Constantes des coordonnï¿½es 
 	/** The LAMBER t_ hau t_ gauche. */
 	private final Point LAMBERT_HAUT_GAUCHE = new Point(897990, 2324046);
 	
@@ -141,7 +141,7 @@ AUTRE};
 	/** The controlleur_menu_bar. */
 	private MenuController controlleur_menu_bar;
 	
-	// Réseau routier
+	// Rï¿½seau routier
 	/** The reseau_routier. */
 	private RoadNetwork reseau_routier;
 	
@@ -159,7 +159,7 @@ AUTRE};
 	/** The pt centre. */
 	private Point ptCentre = new Point(-1, -1);
 	
-	// Numéros des points de départ et d'arrivée
+	// Numï¿½ros des points de dï¿½part et d'arrivï¿½e
 	/** The arrivee. */
 	private int depart = -1, arrivee = -1;
 	
@@ -175,7 +175,7 @@ AUTRE};
 	 * @param fichierXml the fichier xml
 	 */
 	public Application(String fichierXml) {
-		// Construction des différents éléments de l'application
+		// Construction des diffï¿½rents ï¿½lï¿½ments de l'application
 		reseau_routier = new RoadNetwork();
 		reseau_routier.parseXml(fichierXml);
 		
@@ -199,7 +199,7 @@ AUTRE};
 		plus_court_chemin.init(reseau_routier, ZOOM_INITIAL);
 		chemin = new Vector<ItineraryState>();
 		
-		// Initialisations des différents éléments
+		// Initialisations des diffï¿½rents ï¿½lï¿½ments
 		fenetre.getPanneauVue().getCarte().setScaleSize(ECHELLE_TAILLE);
 		miseEnPlaceImages();
 		remplirListesVilles();
@@ -224,7 +224,7 @@ AUTRE};
 	 * Mise en place ecouteurs.
 	 */
 	private void miseEnPlaceEcouteurs() {
-		// Met en place les différents écouteurs pour les interractions avec l'utilisateur
+		// Met en place les diffï¿½rents ï¿½couteurs pour les interractions avec l'utilisateur
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonOk(controlleur_boutons);
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonZoomMoins(controlleur_boutons);
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonZoomPlus(controlleur_boutons);
@@ -349,7 +349,7 @@ AUTRE};
 		}
 	}
 	
-	// Selectionne le filtre a envoyer à la comboBox
+	// Selectionne le filtre a envoyer ï¿½ la comboBox
 	/**
 	 * Select filter.
 	 *
@@ -400,7 +400,7 @@ AUTRE};
 		// Lecture de la demande de l'utilisateur
 		setDepart(fenetre.getPanneauControles().getNumPoint(PanelControls.jcbFlag.DEPART));
 		setArrivee(fenetre.getPanneauControles().getNumPoint(PanelControls.jcbFlag.ARRIVEE));
-		// Mise à jour de l'affichage
+		// Mise ï¿½ jour de l'affichage
 		chercherItineraire();
 		repositionnerVue();
 	}
@@ -409,7 +409,7 @@ AUTRE};
 	 * Chercher itineraire.
 	 */
 	private void chercherItineraire() {
-		// Résoue l'itinéraire et ajoute les points à la carte
+		// Rï¿½soue l'itinï¿½raire et ajoute les points ï¿½ la carte
 		fenetre.getPanneauVue().getCarte().viderPoints();
 		if (depart == arrivee) {
 			fenetre.getPanneauInfos().setMessage("Erreur !", "Veuillez choisir 2 points diff\u00e9rents !");
@@ -444,7 +444,7 @@ AUTRE};
 	private void afficherListeRoutes() {
 		fenetre.getPanneauInfos().reinitialiserInfos();
 		
-		// Erreur si chemin vide (non trouvé)
+		// Erreur si chemin vide (non trouvï¿½)
 		if (chemin.isEmpty()) {
 			fenetre.getPanneauInfos().setMessage("Erreur !", "Aucun chemin n'a pu etre trouv\u00e9 !");
 		}
@@ -497,7 +497,7 @@ AUTRE};
 	 */
 	private void repositionnerVue() {
 		if (chemin.size() > 1) {
-			// Cherche le rectangle occupé
+			// Cherche le rectangle occupï¿½
 			int minx = 100000, miny = 100000, maxx = 0, maxy = 0;
 			ItineraryState pos;
 			Point pt;
@@ -560,20 +560,20 @@ AUTRE};
 	 * Update centre.
 	 */
 	public void updateCentre() {
-		//On conserve le point au centre de l'écran
+		//On conserve le point au centre de l'ï¿½cran
 		Dimension dim = fenetre.getPanneauVue().getViewport().getSize();
 		Point coin = new Point(fenetre.getPanneauVue().getViewport().getViewPosition());
 		ptCentre = new Point((int)((coin.getX()/pourcentage_zoom) + dim.getWidth()/(2*pourcentage_zoom)), (int)((coin.getY()/pourcentage_zoom) + dim.getHeight()/(2*pourcentage_zoom)));
 	}
 
-	//Positionne la vue sur le pt passé en param (generalement ptCentre)
+	//Positionne la vue sur le pt passï¿½ en param (generalement ptCentre)
 	/**
 	 * Recentrer vue.
 	 *
 	 * @param pt the pt
 	 */
 	public void recentrerVue(Point pt) {
-		//Mise en mémoire du point Centre
+		//Mise en mï¿½moire du point Centre
 		ptCentre = pt;
 		
 		//centrage de la vue sur le point
@@ -641,14 +641,14 @@ AUTRE};
 	 * @return the string
 	 */
 	private String convertirUniteDistance(double px, float zoom) {
-		// Conversion dans l'unité de mesure
+		// Conversion dans l'unitï¿½ de mesure
 		String unite = "m";
 		double m = (double)(px * (double)ECHELLE_CARTE * (double)((double)1 / (double)zoom));
 		if (m > 1000) {
 			m /= 1000;
 			unite = "km";
 		}
-		// Arrondissement à 2 chiffres après la virgule
+		// Arrondissement ï¿½ 2 chiffres aprï¿½s la virgule
 		m = ((double) Math.round(m * 100)) / 100;
 		return new String(m + " " + unite);
 	}
@@ -785,15 +785,15 @@ AUTRE};
 		Point p2 = reseau_routier.getPoint(id2);
 		Point p3 = reseau_routier.getPoint(id3);
 
-		//déterminer l'angle entre les deux droites
+		//dï¿½terminer l'angle entre les deux droites
 		
-		//clacul de l'angle du précédent arc par rapport à l'origine
+		//clacul de l'angle du prï¿½cï¿½dent arc par rapport ï¿½ l'origine
 		double angle1 = (atan2((p2.getY()-p1.getY()),(p2.getX()-p1.getX())));
 		
-		//calcul de l'angle de l'arc deux fois précédent par rapport a l'origine
+		//calcul de l'angle de l'arc deux fois prï¿½cï¿½dent par rapport a l'origine
 		double angle2 = (atan2((p3.getY()-p1.getY()),(p3.getX()-p1.getX())));
 		
-		//soustraction de l'un par rapport à l'autre pour avoir leur angle relatif
+		//soustraction de l'un par rapport ï¿½ l'autre pour avoir leur angle relatif
 		double angle = angle2-angle1;
 		
 		if(sin(angle)<-0.1)
