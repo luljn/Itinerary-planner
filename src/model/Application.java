@@ -889,8 +889,7 @@ AUTRE};
 	 * About.
 	 */
 	public void about(){
-		aboutWindow.setVisible(true);
-		
+		aboutWindow.showMessageAbout(fenetre);
 	}
 
 	/**
