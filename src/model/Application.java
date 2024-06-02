@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.Desktop;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
@@ -12,11 +15,15 @@ import java.util.Vector;
 import static java.lang.Math.*;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.io.File;
 import java.io.FileWriter;
+
+import java.net.URI;
 
 import view.*;
 import controller.*;
@@ -890,6 +897,32 @@ AUTRE};
 	 */
 	public void about(){
 		aboutWindow.showMessageAbout(fenetre);
+	}
+
+	public void helpMe(){
+
+        JEditorPane editorPane = new JEditorPane();
+        editorPane.setContentType("text/html");
+        editorPane.setText("<html><body><a href='https://www.example.com'>Cliquez ici pour accéder au guide d'utilisation.</a></body></html>");
+        editorPane.setEditable(false);
+        editorPane.setOpaque(false);
+        
+        // Ajout d'un HyperlinkListener pour gérer les clics sur le lien.
+        editorPane.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    try {
+                        // Ouveerture du lien dans le navigateur par défaut.
+                        Desktop.getDesktop().browse(e.getURL().toURI());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        JOptionPane.showMessageDialog(fenetre, editorPane, "Itinerary planner", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	/**
