@@ -867,7 +867,7 @@ AUTRE};
 			try{
 				
 				JFileChooser jFileChooser = new JFileChooser();
-				jFileChooser.setSelectedFile(new File("fileToSave.txt"));
+				jFileChooser.setSelectedFile(new File("Mon-Itinéraire"));
 				 int retrival = jFileChooser.showSaveDialog(fenetre);
 				 if (retrival == JFileChooser.APPROVE_OPTION) {
 					try 
