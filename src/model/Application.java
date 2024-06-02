@@ -880,7 +880,9 @@ AUTRE};
 				}
 			}				
 			catch(Exception ex)
-			{}
+			{
+				ex.printStackTrace();
+			}
 	}
 	
 	/**
