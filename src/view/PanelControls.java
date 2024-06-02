@@ -223,7 +223,8 @@ DEPART,
 		
 		// Label des zooms
 		jlZoom = new JLabel("Zoom :");
-		jlZoom.setFont(jlZoom.getFont().deriveFont(Font.BOLD));
+		// jlZoom.setFont(jlZoom.getFont().deriveFont(Font.BOLD));
+		jlZoom.setFont(new Font(jlZoom.getFont().getFontName(), Font.BOLD, 10));
 		contraintes.gridx = 0;
 		contraintes.gridy = 0;
 		contraintes.gridwidth = 3;
@@ -244,12 +245,14 @@ DEPART,
 		
 		//Slider de zoom
 		jsZoom = new JSlider();
+		jsZoom.setFont(new Font(jsZoom.getFont().getFontName(), Font.BOLD, 10));
 		jsZoom.setMinimum((int) (Application.ZOOM_MIN*100));
 		jsZoom.setMaximum((int) (Application.ZOOM_MAX*100));
 		jsZoom.setValue((int) (Application.ZOOM_INITIAL*100));
 		jsZoom.setMajorTickSpacing(10);
 		jsZoom.setPaintTicks(true);
 		jsZoom.setPaintLabels(true);
+		jsZoom.setPreferredSize(new Dimension(500, 50));
 		contraintes.gridx = 1;
 		contraintes.gridy = 1;
 		jpConteneurEst.add(jsZoom,contraintes);

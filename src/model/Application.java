@@ -32,7 +32,7 @@ import controller.*;
 public class Application {
 	// Quelques constantes
 	/** The Constant ZOOM_MAX. */
-	public final static float ZOOM_MAX = (float) 1;
+	public final static float ZOOM_MAX = (float) 2;
 	
 	/** The Constant ZOOM_MIN. */
 	public final static float ZOOM_MIN = (float)0.1;
