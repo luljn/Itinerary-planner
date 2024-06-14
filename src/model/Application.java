@@ -821,6 +821,17 @@ AUTRE};
 	public void changeAntiAliasing() {
 		fenetre.getPanneauVue().getCarte().changerAntiAliasing();
 	}
+
+	/**
+	 * Hide Infos Panel.
+	 */
+	public void hideOrSeeInfosPanel(){
+
+		JPanel panneauInfos = fenetre.getPanneauInfos();
+		panneauInfos.setVisible(!panneauInfos.isVisible());
+		fenetre.getContentPane().revalidate();
+		fenetre.getContentPane().repaint();
+	}
 	
 	/**
 	 * Sets the depart.
