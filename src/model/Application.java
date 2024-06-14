@@ -46,7 +46,7 @@ public class Application {
 	public final static float ZOOM_MIN = (float)0.1;
 	
 	/** The Constant ZOOM_INITIAL. */
-	public final static float ZOOM_INITIAL = (float) 0.5;
+	public final static float ZOOM_INITIAL = (float) 1;
 	
 	/** The Constant CRAN_ZOOM_PLUS. */
 	public final static float CRAN_ZOOM_PLUS = (float) 0.1;

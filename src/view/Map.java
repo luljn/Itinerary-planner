@@ -1,6 +1,6 @@
 /*
  * Class Carte :
- * Dérivée de ImageScrollable (pour l'image)
+ * Dï¿½rivï¿½e de ImageScrollable (pour l'image)
  * Contient et dessine l'itinï¿½raire
  */
 
@@ -39,7 +39,7 @@ import model.Application;
 @SuppressWarnings("serial")
 public class Map extends ImageScrollable {
 	
-	//Image représentant la carte
+	//Image reprï¿½sentant la carte
 	/** The img carte. */
 	Image imgCarte;
 	
@@ -55,7 +55,7 @@ public class Map extends ImageScrollable {
 	/** The pourcentage_zoom. */
 	private float pourcentage_zoom;
 	
-	// Constantes de l'itinéraire
+	// Constantes de l'itinï¿½raire
 	/** The itineraire_outline_epaisseur. */
 	private final int itineraire_outline_epaisseur = 4;
     
@@ -95,7 +95,7 @@ public class Map extends ImageScrollable {
     /** The lettres_decalage. */
     private final int lettres_decalage = 3;
     
-    // Données de l'itinéraire
+    // Donnï¿½es de l'itinï¿½raire
     /** The itineraire. */
     private Vector<Point> itineraire;
     
@@ -114,7 +114,7 @@ public class Map extends ImageScrollable {
     /** The itineraire_point_unique_est_point_depart. */
     private boolean itineraire_point_unique_est_point_depart = true;
     
-    // Données du point le plus proche
+    // Donnï¿½es du point le plus proche
     /** The point_proche_couleur. */
     private final Color point_proche_couleur = Color.BLACK;
     
@@ -207,7 +207,7 @@ public class Map extends ImageScrollable {
 		// Initialisation du menu
 		menu = new JPopupMenu();
 		
-		// Option "chosir comme point de départ"
+		// Option "chosir comme point de dï¿½part"
 		BufferedImage dessin_depart = new BufferedImage(15, 15, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g21 = dessin_depart.createGraphics();
 		g21.setColor(itineraire_couleur_depart);
@@ -229,7 +229,7 @@ public class Map extends ImageScrollable {
 		
 		menu.addSeparator();
 		
-		// Option "Changer la couleur du tracé"
+		// Option "Changer la couleur du tracï¿½"
 		choix_itineraire_couleur = new JMenuItem("Changer la couleur du trac\u00e9...");
 		choix_itineraire_couleur.setName("choix_itineraire_couleur");
 		menu.add(choix_itineraire_couleur);
@@ -241,7 +241,7 @@ public class Map extends ImageScrollable {
 		choix_anti_aliasing.setName("choix_anti_aliasing");
 		menu.add(choix_anti_aliasing);
 		
-		// Ajout du menu à la carte
+		// Ajout du menu ï¿½ la carte
 		add(menu);
 		
 		// Initialisation de l'anti-aliasing
@@ -310,7 +310,7 @@ public class Map extends ImageScrollable {
     public void afficherMenu() {
     	if ((point_proche.getX() != -1) && (point_proche.getY() != -1)) {
 	    	Point pt = new Point(point_proche);
-	    	// Annulation du déplacement de la carte
+	    	// Annulation du dï¿½placement de la carte
 	    	pt.translate((int) -getVisibleRect().getX() + menu_depart_x, (int) -getVisibleRect().getY() + menu_depart_y);
 	    	menu.setLocation(pt);
 	    	menu.setVisible(true);
@@ -356,7 +356,7 @@ public class Map extends ImageScrollable {
 
     	g2.drawImage(imgCarte, affineTransform, null);
     	
-    	// Traçage de l'échelle
+    	// Traï¿½age de l'ï¿½chelle
     	g2.setColor(itineraire_echelle_couleur);
     	g2.setStroke(new BasicStroke(itineraire_echelle_epaisseur));
     	int depart_x = ((int) getVisibleRect().getMinX()) + itineraire_echelle_depart_x;
@@ -372,7 +372,7 @@ public class Map extends ImageScrollable {
     		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     	}
     	
-    	// Traçage de l'itinéraire
+    	// Traï¿½age de l'itinï¿½raire
     	if (itineraire.size() > 1) {
     		Point pt_depart = new Point();
 	    	Point pt = new Point(0, 0);
@@ -387,16 +387,16 @@ public class Map extends ImageScrollable {
 	    			pt_depart = new Point(pt);
 	    		}
 	    		else {
-	    			// Traçage de la droite eliant les 2 points
+	    			// Traï¿½age de la droite eliant les 2 points
 	    			g2.drawLine((int)prec.getX(), (int)prec.getY(), (int)pt.getX(), (int)pt.getY());
 	    		}
 	    		prec.setLocation(pt);
 	    	}
 	    	
-	    	// Premier point : traçage du point de départ
+	    	// Premier point : traï¿½age du point de dï¿½part
 	    	tracePointDepart(g2, pt_depart);
 	    	
-	    	// Dernier point : traçage du point d'arrivée
+	    	// Dernier point : traï¿½age du point d'arrivï¿½e
 			tracePointArrivee(g2, pt);
     	}
     	else if (itineraire.size() == 1) {
@@ -408,7 +408,7 @@ public class Map extends ImageScrollable {
     		}
     	}
     
-    	// Traçage du point le plus proche de la souris
+    	// Traï¿½age du point le plus proche de la souris
     	if ((point_proche.getX() != -1) && (point_proche.getY() != -1)) {
     		tracePoint(g2, point_proche, point_proche_couleur, point_proche_taille);
         	// Tracage des donnees du point le plus proche de la souris

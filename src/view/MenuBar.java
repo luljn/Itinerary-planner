@@ -15,10 +15,11 @@ import javax.swing.JMenuItem;
 public class MenuBar extends JMenuBar {
 	
 	/** The help. */
-	private JMenu fileMenu, viewMenu, help;
+	private JMenu fileMenu, viewMenu, help, colorManagmentMenu;
 	
 	/** The exit. */
-	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos; 
+	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
+	                  changeStartingPointColor, changeArrivalPointColor; 
 	
 	/** The view anti aliasing. */
 	private JCheckBoxMenuItem viewAntiAliasing;
@@ -45,6 +46,15 @@ public class MenuBar extends JMenuBar {
 		viewAntiAliasing.setState(true);
 		viewMenu.add(viewAntiAliasing);
 		viewMenu.add(minimizePanelInfos);
+
+		// The menu to manage(change) the colors of map components.
+		colorManagmentMenu = new JMenu("Change Colors");
+		changeItineraryColor = new JMenuItem("Itinerary Color");
+		changeStartingPointColor = new JMenuItem("Starting Point Color");
+		changeArrivalPointColor = new JMenuItem("Arrival Point Color");
+		colorManagmentMenu.add(changeItineraryColor);
+		colorManagmentMenu.add(changeStartingPointColor);
+		colorManagmentMenu.add(changeArrivalPointColor);
 		
 		help = new JMenu("?");
 		helpitem = new JMenuItem("Help me !");
@@ -54,11 +64,8 @@ public class MenuBar extends JMenuBar {
 		
 		add(fileMenu);
 		add(viewMenu);
+		add(colorManagmentMenu);
 		add(help);
-	
-	
-		
-		
 	}
 	
 	/**
