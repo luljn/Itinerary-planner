@@ -18,7 +18,7 @@ public class MenuBar extends JMenuBar {
 	private JMenu fileMenu, viewMenu, help;
 	
 	/** The exit. */
-	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit; 
+	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos; 
 	
 	/** The view anti aliasing. */
 	private JCheckBoxMenuItem viewAntiAliasing;
@@ -28,9 +28,8 @@ public class MenuBar extends JMenuBar {
 	 */
 	public MenuBar(){
 		super();
+
 		fileMenu = new JMenu("File");
-	
-		
 		exit = new JMenuItem("Exit");
 		fileExportItinerary = new JMenuItem("Export Itinerary");
 		fileChangeMap = new JMenuItem("Change Map");		
@@ -41,8 +40,11 @@ public class MenuBar extends JMenuBar {
 		
 		viewMenu = new JMenu("View");
 		viewAntiAliasing = new JCheckBoxMenuItem("AntiAliasing");
+		minimizePanelInfos = new JMenuItem("Hide Infos Panel");
+		// minimizePanelInfos.addActionListener(null);
 		viewAntiAliasing.setState(true);
 		viewMenu.add(viewAntiAliasing);
+		viewMenu.add(minimizePanelInfos);
 		
 		help = new JMenu("?");
 		helpitem = new JMenuItem("Help me !");

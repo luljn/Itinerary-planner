@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.Desktop;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
@@ -12,13 +15,15 @@ import java.util.Vector;
 import static java.lang.Math.*;
 
 import javax.swing.*;
-import javax.swing.ImageIcon;
-import javax.swing.JColorChooser;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.io.File;
 import java.io.FileWriter;
+
+import java.net.URI;
 
 import view.*;
 import controller.*;
@@ -34,7 +39,7 @@ import controller.*;
 public class Application {
 	// Quelques constantes
 	/** The Constant ZOOM_MAX. */
-	public final static float ZOOM_MAX = (float) 1;
+	public final static float ZOOM_MAX = (float) 2;
 	
 	/** The Constant ZOOM_MIN. */
 	public final static float ZOOM_MIN = (float)0.1;
@@ -51,16 +56,13 @@ public class Application {
 	/** The Constant RETOUR_ZOOM_INITIAL. */
 	public final static float RETOUR_ZOOM_INITIAL = -2;
 	
-	/** The DOSSIE r_ images. */
-	private final String DOSSIER_IMAGES = "img/";
-	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
 	
 	/** The ECHELL e_ taille. */
 	private final int ECHELLE_TAILLE = 30;
 	
-	// Constantes des coordonnées 
+	// Constantes des coordonnï¿½es 
 	/** The LAMBER t_ hau t_ gauche. */
 	private final Point LAMBERT_HAUT_GAUCHE = new Point(897990, 2324046);
 	
@@ -141,7 +143,7 @@ AUTRE};
 	/** The controlleur_menu_bar. */
 	private MenuController controlleur_menu_bar;
 	
-	// Réseau routier
+	// Rï¿½seau routier
 	/** The reseau_routier. */
 	private RoadNetwork reseau_routier;
 	
@@ -159,7 +161,7 @@ AUTRE};
 	/** The pt centre. */
 	private Point ptCentre = new Point(-1, -1);
 	
-	// Numéros des points de départ et d'arrivée
+	// Numï¿½ros des points de dï¿½part et d'arrivï¿½e
 	/** The arrivee. */
 	private int depart = -1, arrivee = -1;
 	
@@ -168,18 +170,27 @@ AUTRE};
 	
 	/** The old_zoom. */
 	private float old_zoom = ZOOM_INITIAL;
+
+	/** Le dossier qui contient le fichier xml et son image associÃ©e. */
+	private String DOSSIER_DATA;
+	//
+	private String fichierXML;
 	
 	/**
 	 * Instantiates a new application.
 	 *
 	 * @param fichierXml the fichier xml
+	 * @param dossierData Le dossier qui contient le fichier xml et son image associÃ©e.
 	 */
-	public Application(String fichierXml) {
-		// Construction des différents éléments de l'application
+	public Application(String fichierXml, String dossierData) {
+
+		this.fichierXML = fichierXml;
+		this.DOSSIER_DATA = dossierData;
+		// Construction des diffï¿½rents ï¿½lï¿½ments de l'application
 		reseau_routier = new RoadNetwork();
-		reseau_routier.parseXml(fichierXml);
+		reseau_routier.parseXml(DOSSIER_DATA + fichierXML);
 		
-		lienCarte = DOSSIER_IMAGES + reseau_routier.getNomFichierImage();
+		lienCarte = DOSSIER_DATA + reseau_routier.getNomFichierImage();
 		new ImageIcon(lienCarte);
 		
 		
@@ -199,7 +210,7 @@ AUTRE};
 		plus_court_chemin.init(reseau_routier, ZOOM_INITIAL);
 		chemin = new Vector<ItineraryState>();
 		
-		// Initialisations des différents éléments
+		// Initialisations des diffï¿½rents ï¿½lï¿½ments
 		fenetre.getPanneauVue().getCarte().setScaleSize(ECHELLE_TAILLE);
 		miseEnPlaceImages();
 		remplirListesVilles();
@@ -216,15 +227,15 @@ AUTRE};
 	 */
 	private void miseEnPlaceImages() {
 		fenetre.setIconImage(new ImageIcon("img/logoBelfort.gif").getImage());
-		//fenetre.getPanneauControles().setIconZoomMoins(new ImageIcon(DOSSIER_IMAGES + "loupe_moins.gif"));
-		//fenetre.getPanneauControles().setIconZoomPlus(new ImageIcon(DOSSIER_IMAGES + "loupe_plus.gif"));
+		//fenetre.getPanneauControles().setIconZoomMoins(new ImageIcon(DOSSIER_DATA + "loupe_moins.gif"));
+		//fenetre.getPanneauControles().setIconZoomPlus(new ImageIcon(DOSSIER_DATA + "loupe_plus.gif"));
 	}
 	
 	/**
 	 * Mise en place ecouteurs.
 	 */
 	private void miseEnPlaceEcouteurs() {
-		// Met en place les différents écouteurs pour les interractions avec l'utilisateur
+		// Met en place les diffï¿½rents ï¿½couteurs pour les interractions avec l'utilisateur
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonOk(controlleur_boutons);
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonZoomMoins(controlleur_boutons);
 		fenetre.getPanneauControles().ajouterEcouteurAuBoutonZoomPlus(controlleur_boutons);
@@ -349,7 +360,7 @@ AUTRE};
 		}
 	}
 	
-	// Selectionne le filtre a envoyer à la comboBox
+	// Selectionne le filtre a envoyer ï¿½ la comboBox
 	/**
 	 * Select filter.
 	 *
@@ -400,7 +411,7 @@ AUTRE};
 		// Lecture de la demande de l'utilisateur
 		setDepart(fenetre.getPanneauControles().getNumPoint(PanelControls.jcbFlag.DEPART));
 		setArrivee(fenetre.getPanneauControles().getNumPoint(PanelControls.jcbFlag.ARRIVEE));
-		// Mise à jour de l'affichage
+		// Mise ï¿½ jour de l'affichage
 		chercherItineraire();
 		repositionnerVue();
 	}
@@ -409,7 +420,7 @@ AUTRE};
 	 * Chercher itineraire.
 	 */
 	private void chercherItineraire() {
-		// Résoue l'itinéraire et ajoute les points à la carte
+		// Rï¿½soue l'itinï¿½raire et ajoute les points ï¿½ la carte
 		fenetre.getPanneauVue().getCarte().viderPoints();
 		if (depart == arrivee) {
 			fenetre.getPanneauInfos().setMessage("Erreur !", "Veuillez choisir 2 points diff\u00e9rents !");
@@ -444,7 +455,7 @@ AUTRE};
 	private void afficherListeRoutes() {
 		fenetre.getPanneauInfos().reinitialiserInfos();
 		
-		// Erreur si chemin vide (non trouvé)
+		// Erreur si chemin vide (non trouvï¿½)
 		if (chemin.isEmpty()) {
 			fenetre.getPanneauInfos().setMessage("Erreur !", "Aucun chemin n'a pu etre trouv\u00e9 !");
 		}
@@ -474,7 +485,7 @@ AUTRE};
 							else {
 								gaucheDroite = "tout_droit";
 							}
-							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_IMAGES + "tourner_" + gaucheDroite + ".gif");
+							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_DATA + "tourner_" + gaucheDroite + ".gif");
 							lenTotale += lenRoute;
 							lenRoute = 0;
 						}
@@ -497,7 +508,7 @@ AUTRE};
 	 */
 	private void repositionnerVue() {
 		if (chemin.size() > 1) {
-			// Cherche le rectangle occupé
+			// Cherche le rectangle occupï¿½
 			int minx = 100000, miny = 100000, maxx = 0, maxy = 0;
 			ItineraryState pos;
 			Point pt;
@@ -560,20 +571,20 @@ AUTRE};
 	 * Update centre.
 	 */
 	public void updateCentre() {
-		//On conserve le point au centre de l'écran
+		//On conserve le point au centre de l'ï¿½cran
 		Dimension dim = fenetre.getPanneauVue().getViewport().getSize();
 		Point coin = new Point(fenetre.getPanneauVue().getViewport().getViewPosition());
 		ptCentre = new Point((int)((coin.getX()/pourcentage_zoom) + dim.getWidth()/(2*pourcentage_zoom)), (int)((coin.getY()/pourcentage_zoom) + dim.getHeight()/(2*pourcentage_zoom)));
 	}
 
-	//Positionne la vue sur le pt passé en param (generalement ptCentre)
+	//Positionne la vue sur le pt passï¿½ en param (generalement ptCentre)
 	/**
 	 * Recentrer vue.
 	 *
 	 * @param pt the pt
 	 */
 	public void recentrerVue(Point pt) {
-		//Mise en mémoire du point Centre
+		//Mise en mï¿½moire du point Centre
 		ptCentre = pt;
 		
 		//centrage de la vue sur le point
@@ -641,14 +652,14 @@ AUTRE};
 	 * @return the string
 	 */
 	private String convertirUniteDistance(double px, float zoom) {
-		// Conversion dans l'unité de mesure
+		// Conversion dans l'unitï¿½ de mesure
 		String unite = "m";
 		double m = (double)(px * (double)ECHELLE_CARTE * (double)((double)1 / (double)zoom));
 		if (m > 1000) {
 			m /= 1000;
 			unite = "km";
 		}
-		// Arrondissement à 2 chiffres après la virgule
+		// Arrondissement ï¿½ 2 chiffres aprï¿½s la virgule
 		m = ((double) Math.round(m * 100)) / 100;
 		return new String(m + " " + unite);
 	}
@@ -785,15 +796,15 @@ AUTRE};
 		Point p2 = reseau_routier.getPoint(id2);
 		Point p3 = reseau_routier.getPoint(id3);
 
-		//déterminer l'angle entre les deux droites
+		//dï¿½terminer l'angle entre les deux droites
 		
-		//clacul de l'angle du précédent arc par rapport à l'origine
+		//clacul de l'angle du prï¿½cï¿½dent arc par rapport ï¿½ l'origine
 		double angle1 = (atan2((p2.getY()-p1.getY()),(p2.getX()-p1.getX())));
 		
-		//calcul de l'angle de l'arc deux fois précédent par rapport a l'origine
+		//calcul de l'angle de l'arc deux fois prï¿½cï¿½dent par rapport a l'origine
 		double angle2 = (atan2((p3.getY()-p1.getY()),(p3.getX()-p1.getX())));
 		
-		//soustraction de l'un par rapport à l'autre pour avoir leur angle relatif
+		//soustraction de l'un par rapport ï¿½ l'autre pour avoir leur angle relatif
 		double angle = angle2-angle1;
 		
 		if(sin(angle)<-0.1)
@@ -809,6 +820,17 @@ AUTRE};
 	 */
 	public void changeAntiAliasing() {
 		fenetre.getPanneauVue().getCarte().changerAntiAliasing();
+	}
+
+	/**
+	 * Hide Infos Panel.
+	 */
+	public void hideOrSeeInfosPanel(){
+
+		JPanel panneauInfos = fenetre.getPanneauInfos();
+		panneauInfos.setVisible(!panneauInfos.isVisible());
+		fenetre.getContentPane().revalidate();
+		fenetre.getContentPane().repaint();
 	}
 	
 	/**
@@ -856,7 +878,7 @@ AUTRE};
 			try{
 				
 				JFileChooser jFileChooser = new JFileChooser();
-				jFileChooser.setSelectedFile(new File("fileToSave.txt"));
+				jFileChooser.setSelectedFile(new File("Mon-ItinÃ©raire"));
 				 int retrival = jFileChooser.showSaveDialog(fenetre);
 				 if (retrival == JFileChooser.APPROVE_OPTION) {
 					try 
@@ -876,15 +898,66 @@ AUTRE};
 				}
 			}				
 			catch(Exception ex)
-			{}
+			{
+				ex.printStackTrace();
+			}
 	}
 	
 	/**
 	 * About.
 	 */
 	public void about(){
-		aboutWindow.setVisible(true);
+		aboutWindow.showMessageAbout(fenetre);
+	}
+
+	public void helpMe(){
+
+        JEditorPane editorPane = new JEditorPane();
+        editorPane.setContentType("text/html");
+        editorPane.setText("<html><body><a href='https://www.example.com'>Cliquez ici pour accÃ©der au guide d'utilisation.</a></body></html>");
+        editorPane.setEditable(false);
+        editorPane.setOpaque(false);
+        
+        // Ajout d'un HyperlinkListener pour gÃ©rer les clics sur le lien.
+        editorPane.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    try {
+                        // Ouveerture du lien dans le navigateur par dÃ©faut.
+                        Desktop.getDesktop().browse(e.getURL().toURI());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        JOptionPane.showMessageDialog(fenetre, editorPane, "Itinerary planner", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	/**
+	 * Change Map.
+	 */
+
+	// To change the current Map.
+	public void changeMap(){
+
+		this.fenetre.dispose();
+
+		if(getFichierXML() == "belfort_centre_1708_1572_SetOfStreets_version_GIS.xml" && getDossierData() == "data/belfort_centre/" ){
+
+			new Application("region_belfort_streets.xml", "data/region_belfort/");
+			// this.setFichierXML("region_belfort_streets.xml");
+			// this.setDossierData("data/region_belfort/");
+		}
 		
+		else if(getFichierXML() == "region_belfort_streets.xml" && getDossierData() == "data/region_belfort/" ){
+
+			new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
+			// this.setFichierXML("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.setDossierData("data/belfort_centre/");
+		}
 	}
 	
 	/**
@@ -892,6 +965,26 @@ AUTRE};
 	 */
 	public void close(){
 		fenetre.dispose();
+	}
+
+	public String getDossierData(){
+
+		return this.DOSSIER_DATA;
+	}
+
+	public void setDossierData(String path){
+
+		this.DOSSIER_DATA = path;
+	}
+
+	public String getFichierXML(){
+
+		return this.fichierXML;
+	}
+
+	public void setFichierXML(String newFile){
+
+		this.fichierXML = newFile;
 	}
 }
 

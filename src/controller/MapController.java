@@ -25,13 +25,13 @@ public class MapController implements MouseInputListener, MouseWheelListener {
 	private final float MOLETTE_TAUX = (float)-0.07; // (de)zoom par unite de molette
 	
 	/** The MOLETT e_ ticks. */
-	private final int MOLETTE_TICKS = 2; // le zoom n'est effectué que tous les <MOLETTE_TICKS> ticks de la molette, afin d'éviter des rafraichissement trop fréquents
+	private final int MOLETTE_TICKS = 2; // le zoom n'est effectuï¿½ que tous les <MOLETTE_TICKS> ticks de la molette, afin d'ï¿½viter des rafraichissement trop frï¿½quents
 	
 	// Nombre actuel de ticks de la molette
 	/** The nb ticks. */
 	private int nbTicks = 0;
 	
-	// Coordonnées du point de départ du Drag
+	// Coordonnï¿½es du point de dï¿½part du Drag
 	/** The prev x. */
 	private int prevX = 0;
 	
@@ -67,7 +67,7 @@ public class MapController implements MouseInputListener, MouseWheelListener {
      * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
      */
     public void mousePressed(MouseEvent e) {
-    	 // Click gauche enfoncé
+    	 // Click gauche enfoncï¿½
     	 if (e.getButton() == 1) {
 	    	 app.modifierCurseurVue(Cursor.MOVE_CURSOR);
 	    	 prevX = e.getX();

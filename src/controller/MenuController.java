@@ -31,11 +31,16 @@ public class MenuController implements ActionListener {
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
+	@Override
 	public void actionPerformed(ActionEvent evt) {
 		JMenuItem selectedMenuItem = (JMenuItem) evt.getSource();
 		String itemName = selectedMenuItem.getText();
 		if (itemName.equals("Export Itinerary")) {
 			app.saveExport();
+		}
+		// To change the current Map.
+		if(itemName.equals("Change Map")){
+			app.changeMap();
 		}
 		if(itemName.equals("Exit")){
 			app.close();
@@ -43,8 +48,16 @@ public class MenuController implements ActionListener {
 		if(itemName.equals("About")){
 			app.about();
 		}
+		// Help me(To get help about the usage of the app).
+		if(itemName.equals("Help me !")){
+			app.helpMe();
+		}
 		if(itemName.equals("AntiAliasing")){
 			app.changeAntiAliasing();
+		}
+		// To Hide (or see) the Infos Panel.
+		if(itemName.equals("Hide Infos Panel")){
+			app.hideOrSeeInfosPanel();
 		}
 	}
 }

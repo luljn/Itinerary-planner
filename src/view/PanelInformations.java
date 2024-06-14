@@ -32,7 +32,7 @@ public class PanelInformations extends JPanel{
 	private JLabel lblFeuilleRoute;
 	
 	/** The dlm feuille route. */
-	private DefaultListModel dlmFeuilleRoute; 
+	private DefaultListModel dlmFeuilleRoute;
 	
 	/** The jl feuille route. */
 	private JList jlFeuilleRoute;
@@ -85,14 +85,16 @@ public class PanelInformations extends JPanel{
 		// A ameliorer
 		insideBorder = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
 		jspBorder = BorderFactory.createCompoundBorder(outsideBorder, insideBorder);
+
+		dlmInfos = new DefaultListModel();
+		jlInfos = new JList(dlmInfos);
 		
 		//Init feuille route
 		dlmFeuilleRoute = new DefaultListModel();
 		jlFeuilleRoute = new JList(dlmFeuilleRoute);
 		
 		// Ajout de la liste scrollable d'informations
-		dlmInfos = new DefaultListModel();
-		jlInfos = new JList(dlmInfos);
+		
 		jlInfos.setLayoutOrientation(JList.VERTICAL);
 		jlInfos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jlInfos.setVisibleRowCount(-1);
@@ -107,19 +109,20 @@ public class PanelInformations extends JPanel{
 		lblFeuilleRoute = new JLabel("Feuille de route :");
 		lblFeuilleRoute.setFont(lblFeuilleRoute.getFont().deriveFont(Font.BOLD));
 		lblFeuilleRoute.setAlignmentX(Component.CENTER_ALIGNMENT);
-		//add(lblFeuilleRoute);
+		add(lblFeuilleRoute);
 		
 		// Ajout de la liste scrollable feuille de route
 		
 		jlFeuilleRoute.setLayoutOrientation(JList.VERTICAL);
 		jlFeuilleRoute.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jlFeuilleRoute.setVisibleRowCount(-1);
-		jlFeuilleRoute.setCellRenderer(new AfficheurElementListe());
+		// jlFeuilleRoute.setCellRenderer(new AfficheurElementListe());
 		jspFeuilleRoute = new JScrollPane(jlFeuilleRoute);
 		jspFeuilleRoute.add(jlFeuilleRoute);
-		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)4/5)));
+		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)3/4)));
+		// jspFeuilleRoute.setMinimumSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		jspFeuilleRoute.setBorder(jspBorder);
-		jspFeuilleRoute.setVisible(false);
+		jspFeuilleRoute.setVisible(true);
 		add(jspFeuilleRoute);
 		
 		
@@ -168,6 +171,7 @@ public class PanelInformations extends JPanel{
 		message1 = mess1;
 		message2 = mess2;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -178,6 +182,7 @@ public class PanelInformations extends JPanel{
 	public void setLongueurTrajet(String longueur) {
 		longueur_trajet = longueur;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -192,6 +197,7 @@ public class PanelInformations extends JPanel{
 		this.y = y;
 		this.idPoint = idPoint;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -202,6 +208,7 @@ public class PanelInformations extends JPanel{
 	public void updateZoom(float zoom) {
 		this.zoom = zoom;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -212,6 +219,7 @@ public class PanelInformations extends JPanel{
 	public void updateDepart(int d) {
 		depart = d;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}	
 	
 	/**
@@ -222,6 +230,7 @@ public class PanelInformations extends JPanel{
 	public void updateArrivee(int a) {
 		arrivee = a;
 		refaireInfos();
+		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -245,8 +254,18 @@ public class PanelInformations extends JPanel{
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
 		dlmInfos.addElement(new String("Itineraire: "));
+		// for(Object s: dlmFeuilleRoute.toArray()){
+		// 	dlmInfos.addElement(s);
+		// 	// ajouterRoute(s.toString());
+		// }
+	}
+
+	private void refaireFeuilleDeRoute(){
+
+		reinitialiserRoutes();
 		for(Object s: dlmFeuilleRoute.toArray()){
-			dlmInfos.addElement(s);
+			
+			ajouterRoute(s.toString());
 		}
 	}
 	

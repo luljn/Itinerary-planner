@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<carte ville="belfort centre" src="belfort_centre_1708_1572.gif">
+	<ville nom="belfort centre">
+		<points>
+			<point num="2426" x="375.0" y="1052.0"></point>
+			<point num="3951097" x="74.0" y="868.0"></point>
+			<point num="3951096" x="91.0" y="833.0"></point>
+			<point num="3951095" x="74.0" y="888.0"></point>
+			<point num="3951094" x="89.0" y="901.0"></point>
+			<point num="3951093" x="117.0" y="896.0"></point>
+			<point num="3951091" x="121.0" y="831.0"></point>
+			<point num="3951090" x="132.0" y="817.0"></point>
+			<point num="3951087" x="145.0" y="835.0"></point>
+			<point num="3951083" x="149.0" y="923.0"></point>
+			<point num="2408" x="366.0" y="1100.0"></point>
+			<point num="3951082" x="155.0" y="962.0"></point>
+			<point num="2407" x="403.0" y="1011.0"></point>
+			<point num="3951081" x="177.0" y="980.0"></point>
+			<point num="3951080" x="191.0" y="1020.0"></point>
+			<point num="3951066" x="149.0" y="876.0"></point>
+			<point num="3951065" x="115.0" y="870.0"></point>
+			<point num="3951063" x="303.0" y="980.0"></point>
+			<point num="3951052" x="239.0" y="915.0"></point>
+			<point num="3951051" x="211.0" y="898.0"></point>
+			<point num="3951050" x="272.0" y="950.0"></point>
+			<point num="3951049" x="192.0" y="886.0"></point>
+			<point num="2372" x="427.0" y="994.0"></point>
+			<point num="1546" x="1242.0" y="1202.0"></point>
+			<point num="1545" x="1140.0" y="1204.0"></point>
+			<point num="709" x="497.0" y="1471.0"></point>
+			<point num="708" x="444.0" y="1499.0"></point>
+			<point num="707" x="358.0" y="1298.0"></point>
+			<point num="706" x="354.0" y="1283.0"></point>
+			<point num="705" x="344.0" y="1259.0"></point>
+			<point num="704" x="339.0" y="1228.0"></point>
+			<point num="700" x="335.0" y="1300.0"></point>
+			<point num="699" x="239.0" y="1461.0"></point>
+			<point num="2328" x="461.0" y="980.0"></point>
+			<point num="695" x="444.0" y="1326.0"></point>
+			<point num="694" x="407.0" y="1330.0"></point>
+			<point num="693" x="367.0" y="1338.0"></point>
+			<point num="692" x="595.0" y="1503.0"></point>
+			<point num="690" x="258.0" y="1358.0"></point>
+			<point num="2318" x="360.0" y="1145.0"></point>
+			<point num="686" x="649.0" y="1426.0"></point>
+			<point num="682" x="612.0" y="1475.0"></point>
+			<point num="681" x="606.0" y="1432.0"></point>
+			<point num="680" x="595.0" y="1379.0"></point>
+			<point num="677" x="670.0" y="1397.0"></point>
+			<point num="676" x="623.0" y="1371.0"></point>
+			<point num="667" x="614.0" y="1222.0"></point>
+			<point num="3950966" x="168.0" y="827.0"></point>
+			<point num="3950963" x="164.0" y="797.0"></point>
+			<point num="3950960" x="160.0" y="766.0"></point>
+			<point num="3950956" x="155.0" y="736.0"></point>
+			<point num="648" x="544.0" y="1179.0"></point>
+			<point num="2277" x="772.0" y="929.0"></point>
+			<point num="2275" x="745.0" y="931.0"></point>
+			<point num="644" x="597.0" y="1224.0"></point>
+			<point num="643" x="546.0" y="1230.0"></point>
+			<point num="637" x="288.0" y="1351.0"></point>
+			<point num="636" x="298.0" y="1316.0"></point>
+			<point num="635" x="296.0" y="1287.0"></point>
+			<point num="634" x="303.0" y="1247.0"></point>
+			<point num="620" x="655.0" y="1216.0"></point>
+			<point num="619" x="661.0" y="1251.0"></point>
+			<point num="618" x="625.0" y="1263.0"></point>
+			<point num="617" x="606.0" y="1267.0"></point>
+			<point num="613" x="617.0" y="1326.0"></point>
+			<point num="609" x="531.0" y="1340.0"></point>
+			<point num="606" x="535.0" y="1369.0"></point>
+			<point num="3950886" x="1125.0" y="1283.0"></point>
+			<point num="2209" x="661.0" y="1133.0"></point>
+			<point num="2208" x="651.0" y="1163.0"></point>
+			<point num="7913" x="399.0" y="764.0"></point>
+			<point num="2207" x="674.0" y="1098.0"></point>
+			<point num="7912" x="390.0" y="752.0"></point>
+			<point num="1391" x="911.0" y="658.0"></point>
+			<point num="7911" x="356.0" y="762.0"></point>
+			<point num="1390" x="824.0" y="677.0"></point>
+			<point num="1389" x="800.0" y="683.0"></point>
+			<point num="2204" x="659.0" y="1015.0"></point>
+			<point num="7909" x="342.0" y="726.0"></point>
+			<point num="2203" x="657.0" y="994.0"></point>
+			<point num="2202" x="674.0" y="976.0"></point>
+			<point num="2198" x="770.0" y="980.0"></point>
+			<point num="566" x="572.0" y="1524.0"></point>
+			<point num="565" x="518.0" y="1458.0"></point>
+			<point num="564" x="454.0" y="1383.0"></point>
+			<point num="561" x="360.0" y="1214.0"></point>
+			<point num="1363" x="1058.0" y="1171.0"></point>
+			<point num="547" x="612.0" y="1304.0"></point>
+			<point num="1362" x="1039.0" y="1177.0"></point>
+			<point num="546" x="529.0" y="1316.0"></point>
+			<point num="1360" x="988.0" y="1169.0"></point>
+			<point num="2173" x="640.0" y="807.0"></point>
+			<point num="528" x="548.0" y="1251.0"></point>
+			<point num="527" x="518.0" y="1257.0"></point>
+			<point num="526" x="439.0" y="1267.0"></point>
+			<point num="525" x="375.0" y="1277.0"></point>
+			<point num="509" x="301.0" y="1228.0"></point>
+			<point num="508" x="277.0" y="1234.0"></point>
+			<point num="507" x="253.0" y="1175.0"></point>
+			<point num="506" x="224.0" y="1257.0"></point>
+			<point num="2134" x="580.0" y="827.0"></point>
+			<point num="502" x="497.0" y="966.0"></point>
+			<point num="501" x="484.0" y="933.0"></point>
+			<point num="500" x="469.0" y="896.0"></point>
+			<point num="499" x="463.0" y="868.0"></point>
+			<point num="498" x="439.0" y="805.0"></point>
+			<point num="497" x="430.0" y="785.0"></point>
+			<point num="496" x="424.0" y="760.0"></point>
+			<point num="2095" x="599.0" y="892.0"></point>
+			<point num="3950763" x="1095.0" y="1283.0"></point>
+			<point num="3950762" x="1093.0" y="1283.0"></point>
+			<point num="3950760" x="1114.0" y="1381.0"></point>
+			<point num="3950759" x="1063.0" y="1383.0"></point>
+			<point num="2075" x="649.0" y="178.0"></point>
+			<point num="444" x="168.0" y="1234.0"></point>
+			<point num="443" x="234.0" y="1216.0"></point>
+			<point num="442" x="262.0" y="1210.0"></point>
+			<point num="441" x="294.0" y="1198.0"></point>
+			<point num="440" x="309.0" y="1194.0"></point>
+			<point num="7775" x="412.0" y="717.0"></point>
+			<point num="7774" x="348.0" y="736.0"></point>
+			<point num="7765" x="561.0" y="876.0"></point>
+			<point num="7764" x="576.0" y="901.0"></point>
+			<point num="7763" x="550.0" y="866.0"></point>
+			<point num="7762" x="538.0" y="856.0"></point>
+			<point num="2867" x="988.0" y="709.0"></point>
+			<point num="2866" x="836.0" y="738.0"></point>
+			<point num="2863" x="841.0" y="756.0"></point>
+			<point num="1185" x="352.0" y="1399.0"></point>
+			<point num="1177" x="1106.0" y="1097.0"></point>
+			<point num="1175" x="1035.0" y="1151.0"></point>
+			<point num="1174" x="1024.0" y="1169.0"></point>
+			<point num="1173" x="997.0" y="1206.0"></point>
+			<point num="1984" x="456.0" y="1163.0"></point>
+			<point num="1166" x="1050.0" y="1143.0"></point>
+			<point num="1165" x="719.0" y="782.0"></point>
+			<point num="3951469" x="258.0" y="1198.0"></point>
+			<point num="1161" x="406.0" y="1430.0"></point>
+			<point num="1160" x="392.0" y="1436.0"></point>
+			<point num="1159" x="358.0" y="1438.0"></point>
+			<point num="1158" x="308.0" y="1446.0"></point>
+			<point num="3951462" x="303.0" y="1153.0"></point>
+			<point num="1157" x="559.0" y="218.0"></point>
+			<point num="2787" x="632.0" y="1153.0"></point>
+			<point num="1156" x="975.0" y="1237.0"></point>
+			<point num="2786" x="591.0" y="1141.0"></point>
+			<point num="2785" x="544.0" y="1149.0"></point>
+			<point num="1152" x="815.0" y="1100.0"></point>
+			<point num="1151" x="821.0" y="1143.0"></point>
+			<point num="1150" x="817.0" y="1179.0"></point>
+			<point num="1144" x="826.0" y="1080.0"></point>
+			<point num="1141" x="935.0" y="1035.0"></point>
+			<point num="1140" x="905.0" y="1029.0"></point>
+			<point num="1139" x="879.0" y="1033.0"></point>
+			<point num="322" x="418.0" y="730.0"></point>
+			<point num="321" x="593.0" y="681.0"></point>
+			<point num="1136" x="873.0" y="1047.0"></point>
+			<point num="1951" x="432.0" y="1165.0"></point>
+			<point num="320" x="535.0" y="695.0"></point>
+			<point num="1135" x="864.0" y="1029.0"></point>
+			<point num="1950" x="360.0" y="1186.0"></point>
+			<point num="319" x="491.0" y="710.0"></point>
+			<point num="1134" x="832.0" y="958.0"></point>
+			<point num="1133" x="832.0" y="949.0"></point>
+			<point num="296" x="254.0" y="153.0"></point>
+			<point num="295" x="245.0" y="115.0"></point>
+			<point num="294" x="204.0" y="74.0"></point>
+			<point num="293" x="172.0" y="70.0"></point>
+			<point num="7611" x="175.0" y="681.0"></point>
+			<point num="7610" x="149.0" y="675.0"></point>
+			<point num="1089" x="1101.0" y="1065.0"></point>
+			<point num="1088" x="1071.0" y="1064.0"></point>
+			<point num="1087" x="1030.0" y="1065.0"></point>
+			<point num="7607" x="98.0" y="681.0"></point>
+			<point num="1086" x="997.0" y="1065.0"></point>
+			<point num="7606" x="81.0" y="713.0"></point>
+			<point num="1085" x="974.0" y="1061.0"></point>
+			<point num="7605" x="78.0" y="762.0"></point>
+			<point num="1084" x="932.0" y="1050.0"></point>
+			<point num="1083" x="907.0" y="1053.0"></point>
+			<point num="7603" x="64.0" y="780.0"></point>
+			<point num="1082" x="890.0" y="1060.0"></point>
+			<point num="1081" x="864.0" y="1074.0"></point>
+			<point num="7601" x="183.0" y="668.0"></point>
+			<point num="1080" x="854.0" y="1092.0"></point>
+			<point num="1076" x="1128.0" y="1087.0"></point>
+			<point num="1075" x="1127.0" y="1065.0"></point>
+			<point num="1074" x="1116.0" y="998.0"></point>
+			<point num="253" x="858.0" y="1061.0"></point>
+			<point num="252" x="815.0" y="980.0"></point>
+			<point num="251" x="789.0" y="927.0"></point>
+			<point num="250" x="768.0" y="880.0"></point>
+			<point num="249" x="745.0" y="841.0"></point>
+			<point num="248" x="676.0" y="693.0"></point>
+			<point num="2693" x="530.0" y="1146.0"></point>
+			<point num="247" x="622.0" y="566.0"></point>
+			<point num="1062" x="324.0" y="1255.0"></point>
+			<point num="2692" x="501.0" y="1157.0"></point>
+			<point num="2691" x="478.0" y="1161.0"></point>
+			<point num="245" x="578.0" y="579.0"></point>
+			<point num="244" x="386.0" y="632.0"></point>
+			<point num="243" x="245.0" y="593.0"></point>
+			<point num="242" x="241.0" y="571.0"></point>
+			<point num="241" x="242.0" y="553.0"></point>
+			<point num="240" x="245.0" y="534.0"></point>
+			<point num="239" x="230.0" y="497.0"></point>
+			<point num="7573" x="213.0" y="638.0"></point>
+			<point num="7571" x="145.0" y="650.0"></point>
+			<point num="7570" x="117.0" y="656.0"></point>
+			<point num="7569" x="121.0" y="677.0"></point>
+			<point num="7567" x="123.0" y="762.0"></point>
+			<point num="7566" x="132.0" y="778.0"></point>
+			<point num="1031" x="832.0" y="919.0"></point>
+			<point num="1029" x="1140.0" y="888.0"></point>
+			<point num="1028" x="1097.0" y="889.0"></point>
+			<point num="1027" x="1063.0" y="890.0"></point>
+			<point num="1026" x="1035.0" y="893.0"></point>
+			<point num="1025" x="225.0" y="510.0"></point>
+			<point num="1024" x="965.0" y="901.0"></point>
+			<point num="1023" x="238.0" y="440.0"></point>
+			<point num="1022" x="239.0" y="416.0"></point>
+			<point num="1021" x="239.0" y="326.0"></point>
+			<point num="201" x="634.0" y="218.0"></point>
+			<point num="2644" x="1030.0" y="712.0"></point>
+			<point num="198" x="544.0" y="198.0"></point>
+			<point num="197" x="510.0" y="186.0"></point>
+			<point num="196" x="471.0" y="186.0"></point>
+			<point num="195" x="427.0" y="188.0"></point>
+			<point num="194" x="386.0" y="206.0"></point>
+			<point num="193" x="386.0" y="206.0"></point>
+			<point num="192" x="264.0" y="271.0"></point>
+			<point num="7527" x="270.0" y="904.0"></point>
+			<point num="191" x="225.0" y="263.0"></point>
+			<point num="7526" x="258.0" y="874.0"></point>
+			<point num="190" x="157.0" y="286.0"></point>
+			<point num="7525" x="245.0" y="841.0"></point>
+			<point num="189" x="157.0" y="286.0"></point>
+			<point num="7524" x="234.0" y="809.0"></point>
+			<point num="1003" x="1703.0" y="1383.0"></point>
+			<point num="7523" x="226.0" y="778.0"></point>
+			<point num="1002" x="1586.0" y="1469.0"></point>
+			<point num="7522" x="215.0" y="752.0"></point>
+			<point num="1001" x="1492.0" y="1568.0"></point>
+			<point num="7521" x="207.0" y="725.0"></point>
+			<point num="7519" x="168.0" y="648.0"></point>
+			<point num="2628" x="894.0" y="469.0"></point>
+			<point num="7518" x="136.0" y="613.0"></point>
+			<point num="7515" x="324.0" y="650.0"></point>
+			<point num="7514" x="296.0" y="673.0"></point>
+			<point num="2623" x="845.0" y="400.0"></point>
+			<point num="7513" x="196.0" y="691.0"></point>
+			<point num="7512" x="168.0" y="695.0"></point>
+			<point num="7511" x="151.0" y="717.0"></point>
+			<point num="7510" x="140.0" y="717.0"></point>
+			<point num="7509" x="125.0" y="717.0"></point>
+			<point num="2613" x="705.0" y="238.0"></point>
+			<point num="2612" x="692.0" y="226.0"></point>
+			<point num="977" x="661.0" y="218.0"></point>
+			<point num="3951274" x="318.0" y="860.0"></point>
+			<point num="3950424" x="952.0" y="1192.0"></point>
+			<point num="3950422" x="1082.0" y="1336.0"></point>
+			<point num="3950421" x="1118.0" y="1330.0"></point>
+			<point num="3950420" x="1029.0" y="1346.0"></point>
+			<point num="3950418" x="1061.0" y="1308.0"></point>
+			<point num="3950417" x="1011.0" y="1312.0"></point>
+			<point num="3950415" x="1126.0" y="1260.0"></point>
+			<point num="3950414" x="994.0" y="1277.0"></point>
+			<point num="3950412" x="1129.0" y="1232.0"></point>
+			<point num="104" x="1090.0" y="835.0"></point>
+			<point num="103" x="1035.0" y="722.0"></point>
+			<point num="102" x="1024.0" y="701.0"></point>
+			<point num="101" x="1016.0" y="681.0"></point>
+			<point num="100" x="999.0" y="646.0"></point>
+			<point num="2545" x="809.0" y="1222.0"></point>
+			<point num="2544" x="779.0" y="1210.0"></point>
+			<point num="98" x="988.0" y="622.0"></point>
+			<point num="2543" x="717.0" y="1191.0"></point>
+			<point num="97" x="975.0" y="597.0"></point>
+			<point num="96" x="960.0" y="565.0"></point>
+			<point num="95" x="943.0" y="534.0"></point>
+			<point num="94" x="939.0" y="526.0"></point>
+			<point num="93" x="930.0" y="516.0"></point>
+			<point num="92" x="924.0" y="508.0"></point>
+			<point num="91" x="919.0" y="498.0"></point>
+			<point num="90" x="911.0" y="489.0"></point>
+			<point num="89" x="888.0" y="457.0"></point>
+			<point num="87" x="873.0" y="436.0"></point>
+			<point num="86" x="856.0" y="412.0"></point>
+			<point num="84" x="836.0" y="391.0"></point>
+			<point num="83" x="824.0" y="375.0"></point>
+			<point num="82" x="813.0" y="363.0"></point>
+			<point num="81" x="804.0" y="353.0"></point>
+			<point num="895" x="307.0" y="823.0"></point>
+			<point num="80" x="794.0" y="339.0"></point>
+			<point num="894" x="211.0" y="850.0"></point>
+			<point num="79" x="783.0" y="328.0"></point>
+			<point num="893" x="175.0" y="862.0"></point>
+			<point num="78" x="772.0" y="310.0"></point>
+			<point num="892" x="153.0" y="868.0"></point>
+			<point num="77" x="732.0" y="267.0"></point>
+			<point num="76" x="717.0" y="251.0"></point>
+			<point num="74" x="684.0" y="216.0"></point>
+			<point num="71" x="636.0" y="168.0"></point>
+			<point num="70" x="621.0" y="153.0"></point>
+			<point num="69" x="599.0" y="129.0"></point>
+			<point num="68" x="587.0" y="110.0"></point>
+			<point num="67" x="576.0" y="94.0"></point>
+			<point num="66" x="570.0" y="84.0"></point>
+			<point num="65" x="559.0" y="70.0"></point>
+			<point num="64" x="542.0" y="35.0"></point>
+			<point num="63" x="533.0" y="5.0"></point>
+			<point num="861" x="341.0" y="1340.0"></point>
+			<point num="860" x="318.0" y="1344.0"></point>
+			<point num="859" x="307.0" y="1346.0"></point>
+			<point num="2466" x="484.0" y="1206.0"></point>
+			<point num="2465" x="362.0" y="1116.0"></point>
+			<point num="2462" x="484.0" y="1232.0"></point>
+			<point num="2459" x="512.0" y="1228.0"></point>
+			<point num="1634" x="1135.0" y="1169.0"></point>
+			<point num="2" x="211.0" y="585.0"></point>
+			<point num="1" x="185.0" y="641.0"></point>
+		</points>
+	<rues>
+		<rue nom = "AUXELLE" sens="2">
+			<pt num="191"></pt>
+			<pt num="1021"></pt>
+			<pt num="1022"></pt>
+			<pt num="1023"></pt>
+			<pt num="239"></pt>
+			<pt num="1025"></pt>
+			<pt num="2"></pt>
+			<pt num="1"></pt>
+		</rue>
+		<rue nom = "JAURES" sens="2">
+			<pt num="63"></pt>
+			<pt num="64"></pt>
+			<pt num="65"></pt>
+			<pt num="66"></pt>
+			<pt num="67"></pt>
+			<pt num="68"></pt>
+			<pt num="69"></pt>
+			<pt num="70"></pt>
+			<pt num="71"></pt>
+			<pt num="2075"></pt>
+			<pt num="74"></pt>
+			<pt num="2612"></pt>
+			<pt num="2613"></pt>
+			<pt num="76"></pt>
+			<pt num="77"></pt>
+			<pt num="78"></pt>
+			<pt num="79"></pt>
+			<pt num="80"></pt>
+			<pt num="81"></pt>
+			<pt num="82"></pt>
+			<pt num="83"></pt>
+			<pt num="84"></pt>
+			<pt num="2623"></pt>
+			<pt num="86"></pt>
+			<pt num="87"></pt>
+			<pt num="89"></pt>
+			<pt num="89"></pt>
+			<pt num="2628"></pt>
+			<pt num="90"></pt>
+			<pt num="91"></pt>
+			<pt num="92"></pt>
+			<pt num="93"></pt>
+			<pt num="94"></pt>
+			<pt num="95"></pt>
+			<pt num="96"></pt>
+			<pt num="97"></pt>
+			<pt num="98"></pt>
+			<pt num="100"></pt>
+			<pt num="101"></pt>
+			<pt num="102"></pt>
+			<pt num="2644"></pt>
+			<pt num="103"></pt>
+			<pt num="104"></pt>
+		</rue>
+		<rue nom = "PREMIERE ARMEE" sens="2">
+			<pt num="189"></pt>
+			<pt num="190"></pt>
+			<pt num="191"></pt>
+			<pt num="192"></pt>
+			<pt num="193"></pt>
+			<pt num="194"></pt>
+			<pt num="195"></pt>
+			<pt num="196"></pt>
+			<pt num="197"></pt>
+			<pt num="198"></pt>
+			<pt num="1157"></pt>
+			<pt num="201"></pt>
+			<pt num="201"></pt>
+			<pt num="977"></pt>
+			<pt num="74"></pt>
+			<pt num="74"></pt>
+		</rue>
+		<rue nom = "SOISSONS" sens="2">
+			<pt num="239"></pt>
+			<pt num="240"></pt>
+			<pt num="241"></pt>
+			<pt num="242"></pt>
+			<pt num="243"></pt>
+			<pt num="244"></pt>
+		</rue>
+		<rue nom = "TROIS CHENES" sens="2">
+			<pt num="244"></pt>
+			<pt num="245"></pt>
+			<pt num="247"></pt>
+			<pt num="247"></pt>
+		</rue>
+		<rue nom = "USINES" sens="2">
+			<pt num="247"></pt>
+			<pt num="248"></pt>
+			<pt num="1165"></pt>
+			<pt num="249"></pt>
+			<pt num="250"></pt>
+			<pt num="251"></pt>
+			<pt num="252"></pt>
+			<pt num="253"></pt>
+		</rue>
+		<rue nom = "VESOUL" sens="2">
+			<pt num="293"></pt>
+			<pt num="294"></pt>
+			<pt num="295"></pt>
+			<pt num="296"></pt>
+			<pt num="191"></pt>
+		</rue>
+		<rue nom = "BROGLIE" sens="2">
+			<pt num="322"></pt>
+			<pt num="319"></pt>
+			<pt num="320"></pt>
+			<pt num="321"></pt>
+			<pt num="248"></pt>
+		</rue>
+		<rue nom = "JUIN" sens="2">
+			<pt num="244"></pt>
+			<pt num="7775"></pt>
+			<pt num="322"></pt>
+			<pt num="496"></pt>
+			<pt num="497"></pt>
+			<pt num="498"></pt>
+			<pt num="499"></pt>
+			<pt num="500"></pt>
+			<pt num="501"></pt>
+			<pt num="502"></pt>
+		</rue>
+		<rue nom = "LECLERC" sens="2">
+			<pt num="444"></pt>
+			<pt num="443"></pt>
+			<pt num="442"></pt>
+			<pt num="441"></pt>
+			<pt num="440"></pt>
+			<pt num="1950"></pt>
+			<pt num="1951"></pt>
+			<pt num="1984"></pt>
+			<pt num="2691"></pt>
+			<pt num="2692"></pt>
+			<pt num="2693"></pt>
+			<pt num="2785"></pt>
+			<pt num="2786"></pt>
+			<pt num="2787"></pt>
+			<pt num="2208"></pt>
+			<pt num="2543"></pt>
+			<pt num="2544"></pt>
+			<pt num="2545"></pt>
+		</rue>
+		<rue nom = "FRANCE" sens="2">
+			<pt num="1950"></pt>
+			<pt num="2318"></pt>
+			<pt num="2465"></pt>
+			<pt num="2408"></pt>
+			<pt num="2426"></pt>
+			<pt num="2407"></pt>
+			<pt num="2372"></pt>
+			<pt num="2328"></pt>
+			<pt num="502"></pt>
+			<pt num="2275"></pt>
+			<pt num="2275"></pt>
+		</rue>
+		<rue nom = "HELSINKI" sens="2">
+			<pt num="506"></pt>
+			<pt num="509"></pt>
+		</rue>
+		<rue nom = "DELEMONT" sens="2">
+			<pt num="441"></pt>
+			<pt num="509"></pt>
+			<pt num="634"></pt>
+			<pt num="635"></pt>
+			<pt num="636"></pt>
+			<pt num="637"></pt>
+		</rue>
+		<rue nom = "COPENHAGUE" sens="2">
+			<pt num="690"></pt>
+			<pt num="637"></pt>
+			<pt num="861"></pt>
+			<pt num="693"></pt>
+			<pt num="694"></pt>
+		</rue>
+		<rue nom = "BUCAREST" sens="2">
+			<pt num="1062"></pt>
+			<pt num="700"></pt>
+			<pt num="861"></pt>
+		</rue>
+		<rue nom = "MOSCOU" sens="2">
+			<pt num="704"></pt>
+			<pt num="705"></pt>
+			<pt num="706"></pt>
+			<pt num="707"></pt>
+			<pt num="693"></pt>
+		</rue>
+		<rue nom = "LUXEMBOURG" sens="2">
+			<pt num="706"></pt>
+			<pt num="525"></pt>
+			<pt num="526"></pt>
+			<pt num="527"></pt>
+			<pt num="528"></pt>
+		</rue>
+		<rue nom = "BRUXELLES" sens="2">
+			<pt num="694"></pt>
+			<pt num="695"></pt>
+			<pt num="546"></pt>
+			<pt num="547"></pt>
+		</rue>
+		<rue nom = "KENNEDY" sens="2">
+			<pt num="1950"></pt>
+			<pt num="561"></pt>
+			<pt num="525"></pt>
+			<pt num="694"></pt>
+			<pt num="564"></pt>
+			<pt num="565"></pt>
+			<pt num="566"></pt>
+		</rue>
+		<rue nom = "SAUSSOT" sens="2">
+			<pt num="564"></pt>
+			<pt num="606"></pt>
+			<pt num="609"></pt>
+			<pt num="546"></pt>
+		</rue>
+		<rue nom = "SIENNE" sens="2">
+			<pt num="609"></pt>
+			<pt num="613"></pt>
+		</rue>
+		<rue nom = "MADRID" sens="2">
+			<pt num="613"></pt>
+			<pt num="547"></pt>
+			<pt num="617"></pt>
+			<pt num="618"></pt>
+			<pt num="619"></pt>
+			<pt num="620"></pt>
+			<pt num="2208"></pt>
+		</rue>
+		<rue nom = "STOCKHOLM" sens="2">
+			<pt num="643"></pt>
+			<pt num="644"></pt>
+			<pt num="667"></pt>
+			<pt num="620"></pt>
+		</rue>
+		<rue nom = "BAUMANN" sens="2">
+			<pt num="2785"></pt>
+			<pt num="648"></pt>
+			<pt num="643"></pt>
+			<pt num="528"></pt>
+		</rue>
+		<rue nom = "LISBONNE" sens="2">
+			<pt num="667"></pt>
+			<pt num="618"></pt>
+		</rue>
+		<rue nom = "ROME" sens="2">
+			<pt num="613"></pt>
+			<pt num="676"></pt>
+			<pt num="677"></pt>
+		</rue>
+		<rue nom = "BERNE" sens="2">
+			<pt num="676"></pt>
+			<pt num="680"></pt>
+			<pt num="681"></pt>
+			<pt num="682"></pt>
+		</rue>
+		<rue nom = "VARSOVIE" sens="2">
+			<pt num="681"></pt>
+			<pt num="686"></pt>
+		</rue>
+		<rue nom = "LONDRES" sens="2">
+			<pt num="566"></pt>
+			<pt num="692"></pt>
+			<pt num="682"></pt>
+			<pt num="686"></pt>
+			<pt num="677"></pt>
+		</rue>
+		<rue nom = "MONACO" sens="2">
+			<pt num="708"></pt>
+			<pt num="709"></pt>
+			<pt num="565"></pt>
+		</rue>
+		<rue nom = "VIENNE" sens="2">
+			<pt num="637"></pt>
+			<pt num="1158"></pt>
+			<pt num="1159"></pt>
+			<pt num="1160"></pt>
+			<pt num="1161"></pt>
+		</rue>
+		<rue nom = "BELGRADE" sens="2">
+			<pt num="1159"></pt>
+			<pt num="1185"></pt>
+		</rue>
+		<rue nom = "REIMS" sens="2">
+			<pt num="2692"></pt>
+			<pt num="2459"></pt>
+			<pt num="527"></pt>
+		</rue>
+		<rue nom = "QUEBEC" sens="2">
+			<pt num="2462"></pt>
+			<pt num="2459"></pt>
+		</rue>
+		<rue nom = "YOURCENAR" sens="2">
+			<pt num="2691"></pt>
+			<pt num="2466"></pt>
+		</rue>
+		<rue nom = "MALRAUX" sens="2">
+			<pt num="2"></pt>
+			<pt num="243"></pt>
+		</rue>
+		<rue nom = "MORTS" sens="2">
+			<pt num="7509"></pt>
+			<pt num="7510"></pt>
+			<pt num="7511"></pt>
+			<pt num="7512"></pt>
+			<pt num="7513"></pt>
+			<pt num="7514"></pt>
+			<pt num="7515"></pt>
+			<pt num="244"></pt>
+		</rue>
+		<rue nom = "BOURGEOIS" sens="2">
+			<pt num="7518"></pt>
+			<pt num="7519"></pt>
+			<pt num="7601"></pt>
+			<pt num="7513"></pt>
+			<pt num="7521"></pt>
+			<pt num="7522"></pt>
+			<pt num="7523"></pt>
+			<pt num="7524"></pt>
+			<pt num="7525"></pt>
+			<pt num="7526"></pt>
+			<pt num="7527"></pt>
+		</rue>
+		<rue nom = "GARTEISER" sens="2">
+			<pt num="7566"></pt>
+			<pt num="7567"></pt>
+			<pt num="7509"></pt>
+			<pt num="7569"></pt>
+			<pt num="7570"></pt>
+			<pt num="7571"></pt>
+			<pt num="7519"></pt>
+			<pt num="1"></pt>
+			<pt num="7573"></pt>
+		</rue>
+		<rue nom = "THIERRY" sens="2">
+			<pt num="7513"></pt>
+			<pt num="7611"></pt>
+			<pt num="7610"></pt>
+			<pt num="7569"></pt>
+			<pt num="7607"></pt>
+			<pt num="7606"></pt>
+			<pt num="7605"></pt>
+			<pt num="7603"></pt>
+			<pt num="7603"></pt>
+		</rue>
+		<rue nom = "BRANLY" sens="2">
+			<pt num="319"></pt>
+			<pt num="7762"></pt>
+			<pt num="7763"></pt>
+			<pt num="7765"></pt>
+			<pt num="7764"></pt>
+		</rue>
+		<rue nom = "FEMME" sens="2">
+			<pt num="7774"></pt>
+			<pt num="7775"></pt>
+		</rue>
+		<rue nom = "BONHEUR" sens="2">
+			<pt num="7909"></pt>
+			<pt num="7774"></pt>
+			<pt num="7911"></pt>
+			<pt num="7912"></pt>
+			<pt num="7913"></pt>
+			<pt num="496"></pt>
+		</rue>
+		<rue nom = "DUVILLARD" sens="2">
+			<pt num="892"></pt>
+			<pt num="893"></pt>
+			<pt num="7525"></pt>
+			<pt num="895"></pt>
+			<pt num="497"></pt>
+		</rue>
+		<rue nom = "AUTOROUTE A35" sens="2">
+			<pt num="1001"></pt>
+			<pt num="1002"></pt>
+			<pt num="1003"></pt>
+		</rue>
+		<rue nom = "MIEG" sens="2">
+			<pt num="501"></pt>
+			<pt num="7764"></pt>
+			<pt num="2095"></pt>
+			<pt num="249"></pt>
+		</rue>
+		<rue nom = "BECQUEREL" sens="2">
+			<pt num="320"></pt>
+			<pt num="2134"></pt>
+			<pt num="2095"></pt>
+		</rue>
+		<rue nom = "BEUN" sens="2">
+			<pt num="2134"></pt>
+			<pt num="2173"></pt>
+		</rue>
+		<rue nom = "ETANG" sens="2">
+			<pt num="1165"></pt>
+			<pt num="2173"></pt>
+		</rue>
+		<rue nom = "SAND" sens="2">
+			<pt num="2275"></pt>
+			<pt num="250"></pt>
+		</rue>
+		<rue nom = "GOUGES" sens="2">
+			<pt num="2275"></pt>
+			<pt num="2198"></pt>
+		</rue>
+		<rue nom = "GOLDSCHMIDT" sens="2">
+			<pt num="252"></pt>
+			<pt num="2198"></pt>
+			<pt num="2202"></pt>
+			<pt num="2203"></pt>
+			<pt num="2204"></pt>
+		</rue>
+		<rue nom = "MARCHAL" sens="2">
+			<pt num="2204"></pt>
+			<pt num="2207"></pt>
+			<pt num="2209"></pt>
+			<pt num="2208"></pt>
+		</rue>
+		<rue nom = "SAINT ANTOINE" sens="2">
+			<pt num="2863"></pt>
+			<pt num="103"></pt>
+		</rue>
+		<rue nom = "HUGO" sens="2">
+			<pt num="2866"></pt>
+			<pt num="2867"></pt>
+			<pt num="102"></pt>
+		</rue>
+		<rue nom = "CLEMENCEAU" sens="2">
+			<pt num="1024"></pt>
+			<pt num="1026"></pt>
+			<pt num="1027"></pt>
+			<pt num="1028"></pt>
+			<pt num="1029"></pt>
+		</rue>
+		<rue nom = "JOFFRE" sens="2">
+			<pt num="1031"></pt>
+			<pt num="1024"></pt>
+		</rue>
+		<rue nom = "LEGAY" sens="2">
+			<pt num="2275"></pt>
+			<pt num="251"></pt>
+			<pt num="1031"></pt>
+		</rue>
+		<rue nom = "ANCETRES" sens="2">
+			<pt num="1028"></pt>
+			<pt num="1074"></pt>
+			<pt num="1075"></pt>
+			<pt num="1076"></pt>
+		</rue>
+		<rue nom = "AS DE CARREAU" sens="2">
+			<pt num="1080"></pt>
+			<pt num="1081"></pt>
+			<pt num="1082"></pt>
+			<pt num="1083"></pt>
+			<pt num="1084"></pt>
+			<pt num="1085"></pt>
+			<pt num="1086"></pt>
+			<pt num="1087"></pt>
+			<pt num="1088"></pt>
+			<pt num="1089"></pt>
+			<pt num="1075"></pt>
+		</rue>
+		<rue nom = "MILITAIRE" sens="2">
+			<pt num="1031"></pt>
+			<pt num="1133"></pt>
+			<pt num="1134"></pt>
+			<pt num="1135"></pt>
+			<pt num="1136"></pt>
+		</rue>
+		<rue nom = "FRONT 3/4" sens="2">
+			<pt num="1135"></pt>
+			<pt num="1139"></pt>
+			<pt num="1140"></pt>
+			<pt num="1141"></pt>
+			<pt num="1085"></pt>
+		</rue>
+		<rue nom = "BOULLOCHE" sens="2">
+			<pt num="1144"></pt>
+			<pt num="253"></pt>
+			<pt num="1136"></pt>
+			<pt num="1140"></pt>
+		</rue>
+		<rue nom = "DUBAIL" sens="2">
+			<pt num="2545"></pt>
+			<pt num="1150"></pt>
+			<pt num="1151"></pt>
+			<pt num="1152"></pt>
+			<pt num="1144"></pt>
+		</rue>
+		<rue nom = "FRANCE (Fbg)" sens="2">
+			<pt num="1156"></pt>
+			<pt num="1173"></pt>
+			<pt num="1174"></pt>
+			<pt num="1175"></pt>
+			<pt num="1166"></pt>
+			<pt num="1177"></pt>
+			<pt num="1076"></pt>
+		</rue>
+		<rue nom = "CAPUCINS" sens="2">
+			<pt num="1360"></pt>
+			<pt num="1174"></pt>
+			<pt num="1362"></pt>
+			<pt num="1363"></pt>
+			<pt num="1634"></pt>
+		</rue>
+		<rue nom = "MAZARIN" sens="2">
+			<pt num="1545"></pt>
+			<pt num="1546"></pt>
+		</rue>
+		<rue nom = "SUZE" sens="2">
+			<pt num="1173"></pt>
+			<pt num="1545"></pt>
+		</rue>
+		<rue nom = "STRACTMAN" sens="2">
+			<pt num="1156"></pt>
+			<pt num="3950412"></pt>
+		</rue>
+		<rue nom = "THIERS" sens="2">
+			<pt num="3950414"></pt>
+			<pt num="3950415"></pt>
+		</rue>
+		<rue nom = "PERSHING" sens="2">
+			<pt num="3950417"></pt>
+			<pt num="3950418"></pt>
+		</rue>
+		<rue nom = "BRIAND" sens="2">
+			<pt num="3950420"></pt>
+			<pt num="3950422"></pt>
+			<pt num="3950421"></pt>
+		</rue>
+		<rue nom = "WILSON" sens="2">
+			<pt num="3950424"></pt>
+			<pt num="1156"></pt>
+			<pt num="3950414"></pt>
+			<pt num="3950417"></pt>
+			<pt num="3950420"></pt>
+		</rue>
+		<rue nom = "KOECHLIN" sens="2">
+			<pt num="3950420"></pt>
+			<pt num="3950759"></pt>
+			<pt num="3950760"></pt>
+		</rue>
+		<rue nom = "NOTRE DAME" sens="2">
+			<pt num="3950886"></pt>
+			<pt num="3950763"></pt>
+			<pt num="3950763"></pt>
+		</rue>
+		<rue nom = "SCHAD" sens="2">
+			<pt num="3950956"></pt>
+			<pt num="7521"></pt>
+		</rue>
+		<rue nom = "LOUCHEUR" sens="2">
+			<pt num="7566"></pt>
+			<pt num="3950960"></pt>
+			<pt num="7522"></pt>
+		</rue>
+		<rue nom = "LUX" sens="2">
+			<pt num="3950963"></pt>
+			<pt num="7523"></pt>
+		</rue>
+		<rue nom = "BOUVIER" sens="2">
+			<pt num="7524"></pt>
+			<pt num="3950966"></pt>
+		</rue>
+		<rue nom = "AUXELLES" sens="2">
+			<pt num="7511"></pt>
+			<pt num="3950956"></pt>
+			<pt num="3950960"></pt>
+			<pt num="3950963"></pt>
+			<pt num="3950966"></pt>
+			<pt num="893"></pt>
+			<pt num="3951049"></pt>
+			<pt num="3951051"></pt>
+			<pt num="3951052"></pt>
+			<pt num="3951050"></pt>
+			<pt num="3951063"></pt>
+		</rue>
+		<rue nom = "ECOLIERS" sens="2">
+			<pt num="3951066"></pt>
+			<pt num="3951065"></pt>
+		</rue>
+		<rue nom = "HERRIOT" sens="2">
+			<pt num="3951080"></pt>
+			<pt num="3951081"></pt>
+			<pt num="3951082"></pt>
+			<pt num="3951083"></pt>
+			<pt num="3951066"></pt>
+			<pt num="3951066"></pt>
+			<pt num="892"></pt>
+			<pt num="3951087"></pt>
+			<pt num="3951090"></pt>
+			<pt num="3951091"></pt>
+			<pt num="3951065"></pt>
+			<pt num="3951093"></pt>
+			<pt num="3951094"></pt>
+			<pt num="3951095"></pt>
+			<pt num="3951097"></pt>
+			<pt num="3951096"></pt>
+			<pt num="7566"></pt>
+		</rue>
+		<rue nom = "HOMME" sens="2">
+			<pt num="7526"></pt>
+			<pt num="3951274"></pt>
+		</rue>
+		<rue nom = "DUBLIN" sens="2">
+			<pt num="442"></pt>
+			<pt num="507"></pt>
+			<pt num="3951462"></pt>
+			<pt num="440"></pt>
+		</rue>
+		<rue nom = "CHATEAUDUN" sens="2">
+			<pt num="1389"></pt>
+			<pt num="1390"></pt>
+			<pt num="1391"></pt>
+			<pt num="100"></pt>
+		</rue>
+	</rues>
+</ville>
+</carte>
