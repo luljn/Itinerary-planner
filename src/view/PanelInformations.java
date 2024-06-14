@@ -122,7 +122,7 @@ public class PanelInformations extends JPanel{
 		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		// jspFeuilleRoute.setMinimumSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		jspFeuilleRoute.setBorder(jspBorder);
-		jspFeuilleRoute.setVisible(true);
+		// jspFeuilleRoute.setVisible(true);
 		add(jspFeuilleRoute);
 		
 		
@@ -253,7 +253,7 @@ public class PanelInformations extends JPanel{
 		dlmInfos.addElement(new String("D\u00e9part : " + ((depart == -1) ? "-" : "Point "+ new Integer(depart).toString())));
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
-		dlmInfos.addElement(new String("Itineraire: "));
+		// dlmInfos.addElement(new String("Itineraire: "));
 		// for(Object s: dlmFeuilleRoute.toArray()){
 		// 	dlmInfos.addElement(s);
 		// 	// ajouterRoute(s.toString());

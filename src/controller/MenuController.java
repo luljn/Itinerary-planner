@@ -56,7 +56,7 @@ public class MenuController implements ActionListener {
 			app.changeAntiAliasing();
 		}
 		// To Hide (or see) the Infos Panel.
-		if(itemName.equals("Hide Infos Panel")){
+		if(itemName.equals("Hide or See Infos Panel")){
 			app.hideOrSeeInfosPanel();
 		}
 	}

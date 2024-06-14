@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -827,10 +828,9 @@ AUTRE};
 	 */
 	public void hideOrSeeInfosPanel(){
 
-		JPanel panneauInfos = fenetre.getPanneauInfos();
-		panneauInfos.setVisible(!panneauInfos.isVisible());
-		fenetre.getContentPane().revalidate();
-		fenetre.getContentPane().repaint();
+		this.fenetre.getPanneauInfos().setVisible(!(this.fenetre.getPanneauInfos().isVisible()));
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
 	}
 	
 	/**

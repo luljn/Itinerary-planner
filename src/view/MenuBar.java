@@ -40,7 +40,7 @@ public class MenuBar extends JMenuBar {
 		
 		viewMenu = new JMenu("View");
 		viewAntiAliasing = new JCheckBoxMenuItem("AntiAliasing");
-		minimizePanelInfos = new JMenuItem("Hide Infos Panel");
+		minimizePanelInfos = new JMenuItem("Hide or See Infos Panel");
 		// minimizePanelInfos.addActionListener(null);
 		viewAntiAliasing.setState(true);
 		viewMenu.add(viewAntiAliasing);
@@ -76,7 +76,7 @@ public class MenuBar extends JMenuBar {
 	 * @return the items
 	 */
 	public JMenuItem[] getItems(){
-		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, about, helpitem, exit};
+		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit};
 		
 	}
 }

@@ -125,6 +125,7 @@ public class AppWindow extends JFrame{
 		pnlInfo = new PanelInformations(l, h, su);
 		pnlInfo.setPreferredSize(new Dimension(l,h));
 		getContentPane().add(pnlInfo ,BorderLayout.EAST);
+		this.getPanneauInfos().setVisible(false);
 		
 		// Mise � la taille du bureau pour le mode fen�tre normal
 		pack();
