@@ -48,13 +48,24 @@ public class MenuBar extends JMenuBar {
 		viewMenu.add(minimizePanelInfos);
 
 		// The menu to manage(change) the colors of map components.
-		colorManagmentMenu = new JMenu("Change Colors");
-		changeItineraryColor = new JMenuItem("Itinerary Color");
-		changeStartingPointColor = new JMenuItem("Starting Point Color");
-		changeArrivalPointColor = new JMenuItem("Arrival Point Color");
+		colorManagmentMenu = new JMenu("Colors");
+		changeItineraryColor = new JMenu("Itinerary Color");
+		changeStartingPointColor = new JMenu("Starting Point Color");
+		changeArrivalPointColor = new JMenu("Arrival Point Color");
 		colorManagmentMenu.add(changeItineraryColor);
 		colorManagmentMenu.add(changeStartingPointColor);
 		colorManagmentMenu.add(changeArrivalPointColor);
+
+		/* */
+		changeItineraryColor.add(new JMenuItem("vert"));
+		changeItineraryColor.add(new JMenuItem("bleu"));
+
+		changeArrivalPointColor.add(new JMenuItem("rouge"));
+		changeArrivalPointColor.add(new JMenuItem("vert"));
+
+		changeStartingPointColor.add(new JMenuItem("rouge"));
+		changeStartingPointColor.add(new JMenuItem("vert"));
+		/* */
 		
 		help = new JMenu("?");
 		helpitem = new JMenuItem("Help me !");
