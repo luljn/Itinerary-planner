@@ -17,7 +17,7 @@ import javax.swing.JRadioButtonMenuItem;
 public class MenuBar extends JMenuBar {
 	
 	/** The help. */
-	private JMenu fileMenu, viewMenu, help, colorManagmentMenu;
+	private JMenu fileMenu, viewMenu, help, colorManagmentMenu, mode;
 	
 	/** The exit. */
 	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
@@ -26,7 +26,7 @@ public class MenuBar extends JMenuBar {
 					  ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3; 
 	
 	/** The view anti aliasing. */
-	private JCheckBoxMenuItem viewAntiAliasing;
+	private JCheckBoxMenuItem viewAntiAliasing, utilisationMode, editionMode;
 	
 	/**
 	 * Instantiates a new menu bar.
@@ -97,9 +97,24 @@ public class MenuBar extends JMenuBar {
 		about = new JMenuItem("About");
 		help.add(helpitem);
 		help.add(about);
+
+		/*
+		 * Mode (utilisation or edition)
+		 */
+
+		mode = new JMenu("Mode");
+		ButtonGroup group = new ButtonGroup(); // To select one option at a time.
+		utilisationMode = new JCheckBoxMenuItem("Utilisation");
+		editionMode = new JCheckBoxMenuItem("Edition");
+		group.add(utilisationMode);
+		group.add(editionMode);
+		utilisationMode.setState(true);
+		mode.add(utilisationMode);
+		mode.add(editionMode);
 		
 		add(fileMenu);
 		add(viewMenu);
+		add(mode);
 		add(colorManagmentMenu);
 		add(help);
 	}
