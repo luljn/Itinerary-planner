@@ -79,5 +79,15 @@ public class MenuController implements ActionListener {
 		if(itemName.equals("SC - rouge")){
 			app.setStartingPointColorToRed();
 		}
+		// To change arrival point color.
+		if(itemName.equals("AC - vert")){
+			app.setArrivalPointColorToGreen();
+		}
+		if(itemName.equals("AC - bleu")){
+			app.setArrivalPointColorToBlue();
+		}
+		if(itemName.equals("AC - rouge")){
+			app.setArrivalPointColorToRed();
+		}
 	}
 }

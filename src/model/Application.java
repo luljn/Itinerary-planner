@@ -984,6 +984,9 @@ AUTRE};
 		this.fenetre.getContentPane().repaint();
 	}
 
+	/**
+	 * Change starting point color (green, blue, red).
+	 */
 	public void setStartingPointColorToBlue(){
 
 		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.BLUE);
@@ -1006,8 +1009,28 @@ AUTRE};
 	}
 
 	/**
-	 * Change starting point color (green, blue, red).
+	 * Change arrival point color (green, blue, red).
 	 */
+	public void setArrivalPointColorToBlue(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.BLUE);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	public void setArrivalPointColorToRed(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.RED);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	public void setArrivalPointColorToGreen(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.GREEN);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
 	
 	/**
 	 * Close.
