@@ -63,10 +63,10 @@ public class Map extends ImageScrollable {
     private final int itineraire_epaisseur = 5;
     
     /** The itineraire_couleur_depart. */
-    private final Color itineraire_couleur_depart = Color.GREEN;
+    private Color itineraire_couleur_depart = Color.GREEN;
     
     /** The itineraire_couleur_arrivee. */
-    private final Color itineraire_couleur_arrivee = Color.RED;
+    private Color itineraire_couleur_arrivee = Color.RED;
     
     /** The itineraire_epaisseur_points. */
     private final int itineraire_epaisseur_points = 20;
@@ -508,6 +508,16 @@ public class Map extends ImageScrollable {
 		g2.fillRect(0, 0, 15, 15);
 		ImageIcon icone_couleur = new ImageIcon(dessin_couleur);
 		choix_itineraire_couleur.setIcon(icone_couleur);
+	}
+
+	public void setCouleurDepart(Color color){
+
+		this.itineraire_couleur_depart = color;
+	}
+
+	public void setCouleurArrivee(Color color){
+
+		this.itineraire_couleur_arrivee = color;
 	}
 	
 	/**

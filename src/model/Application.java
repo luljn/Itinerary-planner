@@ -961,7 +961,7 @@ AUTRE};
 	}
 
 	/**
-	 * set itinerary color to green
+	 * Change itinerary color (green, blue, red).
 	 */
 	public void setItineraryColorToGreen(){
 
@@ -983,6 +983,31 @@ AUTRE};
 		this.fenetre.getContentPane().revalidate();
 		this.fenetre.getContentPane().repaint();
 	}
+
+	public void setStartingPointColorToBlue(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.BLUE);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	public void setStartingPointColorToRed(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.RED);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	public void setStartingPointColorToGreen(){
+
+		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.GREEN);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	/**
+	 * Change starting point color (green, blue, red).
+	 */
 	
 	/**
 	 * Close.
