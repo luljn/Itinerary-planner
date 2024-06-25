@@ -59,5 +59,9 @@ public class MenuController implements ActionListener {
 		if(itemName.equals("Hide or See Infos Panel")){
 			app.hideOrSeeInfosPanel();
 		}
+
+		if(itemName.equals("vert")){
+			app.setItineraryColorToGreen();
+		}
 	}
 }

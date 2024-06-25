@@ -46,6 +46,9 @@ public class AppWindow extends JFrame{
 	
 	/** The menu bar. */
 	private MenuBar menuBar;
+
+	/** The map */
+	// private Map carte;
 	
 	
 	// Bordure des Panels
@@ -174,4 +177,8 @@ public class AppWindow extends JFrame{
 		return menuBar.getItems();
 	}
 	
+	// public Map getMap(){
+
+	// 	return this.carte;
+	// }
 }

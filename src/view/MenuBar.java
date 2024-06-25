@@ -3,10 +3,12 @@ package view;
 
 import java.lang.reflect.Array;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -19,7 +21,7 @@ public class MenuBar extends JMenuBar {
 	
 	/** The exit. */
 	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
-	                  changeStartingPointColor, changeArrivalPointColor; 
+	                  changeStartingPointColor, changeArrivalPointColor, option1; 
 	
 	/** The view anti aliasing. */
 	private JCheckBoxMenuItem viewAntiAliasing;
@@ -57,14 +59,24 @@ public class MenuBar extends JMenuBar {
 		colorManagmentMenu.add(changeArrivalPointColor);
 
 		/* */
-		changeItineraryColor.add(new JMenuItem("vert"));
-		changeItineraryColor.add(new JMenuItem("bleu"));
+		ButtonGroup group = new ButtonGroup();
 
-		changeArrivalPointColor.add(new JMenuItem("rouge"));
-		changeArrivalPointColor.add(new JMenuItem("vert"));
+		option1 = new JMenuItem("vert");
+        JMenuItem option2 = new JMenuItem("bleu");
 
-		changeStartingPointColor.add(new JMenuItem("rouge"));
-		changeStartingPointColor.add(new JMenuItem("vert"));
+
+		// group.add(option1);
+        // group.add(option2);
+        // group.add(option3);
+
+		changeItineraryColor.add(option1);
+		changeItineraryColor.add(option2);
+
+		// changeArrivalPointColor.add(new JMenuItem("rouge"));
+		// changeArrivalPointColor.add(new JMenuItem("vert"));
+
+		// changeStartingPointColor.add(new JMenuItem("rouge"));
+		// changeStartingPointColor.add(new JMenuItem("vert"));
 		/* */
 		
 		help = new JMenu("?");
@@ -94,7 +106,7 @@ public class MenuBar extends JMenuBar {
 	 * @return the items
 	 */
 	public JMenuItem[] getItems(){
-		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit};
+		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, option1};
 		
 	}
 }

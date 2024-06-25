@@ -959,6 +959,16 @@ AUTRE};
 			// this.setDossierData("data/belfort_centre/");
 		}
 	}
+
+	/**
+	 * set itinerary color to green
+	 */
+	public void setItineraryColorToGreen(){
+
+		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.GREEN);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
 	
 	/**
 	 * Close.
