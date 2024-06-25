@@ -969,6 +969,20 @@ AUTRE};
 		this.fenetre.getContentPane().revalidate();
 		this.fenetre.getContentPane().repaint();
 	}
+
+	public void setItineraryColorToBlue(){
+
+		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.BLUE);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
+
+	public void setItineraryColorToRed(){
+
+		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.RED);
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
+	}
 	
 	/**
 	 * Close.

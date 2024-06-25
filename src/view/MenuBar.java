@@ -21,7 +21,8 @@ public class MenuBar extends JMenuBar {
 	
 	/** The exit. */
 	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
-	                  changeStartingPointColor, changeArrivalPointColor, option1; 
+	                  changeStartingPointColor, changeArrivalPointColor, ItineraryColorOption1,
+					  ItineraryColorOption2, ItineraryColorOption3; 
 	
 	/** The view anti aliasing. */
 	private JCheckBoxMenuItem viewAntiAliasing;
@@ -59,18 +60,14 @@ public class MenuBar extends JMenuBar {
 		colorManagmentMenu.add(changeArrivalPointColor);
 
 		/* */
-		ButtonGroup group = new ButtonGroup();
 
-		option1 = new JMenuItem("vert");
-        JMenuItem option2 = new JMenuItem("bleu");
+		ItineraryColorOption1 = new JMenuItem("IC - vert");
+        ItineraryColorOption2 = new JMenuItem("IC - bleu");
+		ItineraryColorOption3 = new JMenuItem("IC - rouge");
 
-
-		// group.add(option1);
-        // group.add(option2);
-        // group.add(option3);
-
-		changeItineraryColor.add(option1);
-		changeItineraryColor.add(option2);
+		changeItineraryColor.add(ItineraryColorOption1);
+		changeItineraryColor.add(ItineraryColorOption2);
+		changeItineraryColor.add(ItineraryColorOption3);
 
 		// changeArrivalPointColor.add(new JMenuItem("rouge"));
 		// changeArrivalPointColor.add(new JMenuItem("vert"));
@@ -106,7 +103,8 @@ public class MenuBar extends JMenuBar {
 	 * @return the items
 	 */
 	public JMenuItem[] getItems(){
-		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, option1};
+		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, 
+			                   ItineraryColorOption1, ItineraryColorOption2, ItineraryColorOption3};
 		
 	}
 }
