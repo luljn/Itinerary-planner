@@ -21,8 +21,7 @@ public class MenuBar extends JMenuBar {
 	
 	/** The exit. */
 	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
-	                  changeStartingPointColor, changeArrivalPointColor, StartingPointColor1, StartingPointColor2, StartingPointColor3,
-					  ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3; 
+	                  changeStartingPointColor, changeArrivalPointColor; 
 	
 	/** The view anti aliasing. */
 	private JCheckBoxMenuItem viewAntiAliasing, utilisationMode, editionMode;
@@ -53,34 +52,11 @@ public class MenuBar extends JMenuBar {
 		// The menu to manage(change) the colors of map components.
 		colorManagmentMenu = new JMenu("Change colors");
 		changeItineraryColor = new JMenuItem("Itinerary Color");
-		changeStartingPointColor = new JMenu("Starting Point Color");
-		changeArrivalPointColor = new JMenu("Arrival Point Color");
+		changeStartingPointColor = new JMenuItem("Starting Point Color");
+		changeArrivalPointColor = new JMenuItem("Arrival Point Color");
 		colorManagmentMenu.add(changeItineraryColor);
 		colorManagmentMenu.add(changeStartingPointColor);
 		colorManagmentMenu.add(changeArrivalPointColor);
-
-		/* 
-		 * Colors options
-		*/
-
-		// Arrival point
-		ArrivalPointColor1 = new JMenuItem("AC - rouge"); 
-		ArrivalPointColor2 = new JMenuItem("AC - vert"); 
-		ArrivalPointColor3 = new JMenuItem("AC - bleu");
-
-		changeArrivalPointColor.add(ArrivalPointColor1);
-		changeArrivalPointColor.add(ArrivalPointColor2);
-		changeArrivalPointColor.add(ArrivalPointColor3);
-
-		// Starting point
-		StartingPointColor1 = new JMenuItem("SC - bleu"); 
-		StartingPointColor2 = new JMenuItem("SC - rouge");
-		StartingPointColor3 = new JMenuItem("SC - vert");
-
-		changeStartingPointColor.add(StartingPointColor1);
-		changeStartingPointColor.add(StartingPointColor2);
-		changeStartingPointColor.add(StartingPointColor3);
-		/* */
 		
 		help = new JMenu("?");
 		helpitem = new JMenuItem("Help me !");
@@ -125,9 +101,7 @@ public class MenuBar extends JMenuBar {
 	 */
 	public JMenuItem[] getItems(){
 		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, 
-			                   changeItineraryColor, StartingPointColor1, 
-							   StartingPointColor2, StartingPointColor3, ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3,
-							   utilisationMode, editionMode};
+			                   changeItineraryColor, changeStartingPointColor, changeArrivalPointColor, utilisationMode, editionMode};
 		
 	}
 }

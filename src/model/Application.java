@@ -685,7 +685,26 @@ AUTRE};
 			fenetre.getPanneauVue().getCarte().setItineraireCouleur(newColor);
 		}
 		chercherItineraire();
-		
+	}
+
+	public void choixCouleurDepart() {
+		Color newColor = JColorChooser.showDialog(
+                fenetre, "Choisissez la nouvelle couleur du point de départ",
+                fenetre.getPanneauVue().getCarte().getDepartCouleur());
+		if (newColor != null){
+			fenetre.getPanneauVue().getCarte().setCouleurDepart(newColor);
+		}
+		chercherItineraire();
+	}
+
+	public void choixCouleurArrivee() {
+		Color newColor = JColorChooser.showDialog(
+                fenetre, "Choisissez la nouvelle couleur du point d'arrivée",
+                fenetre.getPanneauVue().getCarte().getArriveeCouleur());
+		if (newColor != null){
+			fenetre.getPanneauVue().getCarte().setCouleurArrivee(newColor);
+		}
+		chercherItineraire();
 	}
 
 	/**
@@ -960,30 +979,7 @@ AUTRE};
 		}
 	}
 
-	/**
-	 * Change itinerary color (green, blue, red).
-	 */
-	public void setItineraryColorToGreen(){
-
-		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.GREEN);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setItineraryColorToBlue(){
-
-		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.BLUE);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setItineraryColorToRed(){
-
-		this.fenetre.getPanneauVue().getCarte().setItineraireCouleur(Color.RED);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
+	
 	/**
 	 * Change starting point color (green, blue, red).
 	 */

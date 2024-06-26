@@ -495,6 +495,14 @@ public class Map extends ImageScrollable {
 		return itineraire_couleur;
 	}
 
+	public Color getDepartCouleur() {
+		return itineraire_couleur_depart;
+	}
+
+	public Color getArriveeCouleur() {
+		return itineraire_couleur_arrivee;
+	}
+
 	/**
 	 * Sets the itineraire couleur.
 	 *

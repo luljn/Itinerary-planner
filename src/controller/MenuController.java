@@ -63,31 +63,13 @@ public class MenuController implements ActionListener {
 		if(itemName.equals("Itinerary Color")){
 			app.choixCouleur();
 		}
-		if(itemName.equals("IC - bleu")){
-			app.afficherMenuContextuel();
-		}
-		if(itemName.equals("IC - rouge")){
-			app.setItineraryColorToRed();
-		}
 		// To change starting point color.
-		if(itemName.equals("SC - vert")){
-			app.setStartingPointColorToGreen();
-		}
-		if(itemName.equals("SC - bleu")){
-			app.setStartingPointColorToBlue();
-		}
-		if(itemName.equals("SC - rouge")){
-			app.setStartingPointColorToRed();
+		if(itemName.equals("Starting Point Color")){
+			app.choixCouleurDepart();
 		}
 		// To change arrival point color.
-		if(itemName.equals("AC - vert")){
-			app.setArrivalPointColorToGreen();
-		}
-		if(itemName.equals("AC - bleu")){
-			app.setArrivalPointColorToBlue();
-		}
-		if(itemName.equals("AC - rouge")){
-			app.setArrivalPointColorToRed();
+		if(itemName.equals("Arrival Point Color")){
+			app.choixCouleurArrivee();
 		}
 	}
 }
