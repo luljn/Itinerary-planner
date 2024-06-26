@@ -115,10 +115,10 @@ public class PanelInformations extends JPanel{
 		
 		jlFeuilleRoute.setLayoutOrientation(JList.VERTICAL);
 		jlFeuilleRoute.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jlFeuilleRoute.setVisibleRowCount(-1);
+		jlFeuilleRoute.setVisibleRowCount(1);
 		// jlFeuilleRoute.setCellRenderer(new AfficheurElementListe());
 		jspFeuilleRoute = new JScrollPane(jlFeuilleRoute);
-		jspFeuilleRoute.add(jlFeuilleRoute);
+		// jspFeuilleRoute.add(jlFeuilleRoute);
 		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		// jspFeuilleRoute.setMinimumSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		jspFeuilleRoute.setBorder(jspBorder);
@@ -253,20 +253,21 @@ public class PanelInformations extends JPanel{
 		dlmInfos.addElement(new String("D\u00e9part : " + ((depart == -1) ? "-" : "Point "+ new Integer(depart).toString())));
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
-		dlmInfos.addElement(new String("Itineraire: "));
-		for(Object s: dlmFeuilleRoute.toArray()){
-			dlmInfos.addElement(s);
-			// ajouterRoute(s.toString());
-		}
+		// dlmInfos.addElement(new String("Itineraire: "));
+		// for(Object s: dlmFeuilleRoute.toArray()){
+		// 	dlmInfos.addElement(s);
+		// 	// ajouterRoute(s.toString());
+		// }
 	}
 
 	private void refaireFeuilleDeRoute(){
 
-		reinitialiserRoutes();
-		for(Object s: dlmFeuilleRoute.toArray()){
+		// reinitialiserRoutes();
+		// for(Object s: dlmFeuilleRoute.toArray()){
 			
-			ajouterRoute(s.toString());
-		}
+		// 	ajouterRoute(s.toString());
+		// }
+		// dlmFeuilleRoute.show();
 	}
 	
 	public ArrayList<String> getItinerary(){

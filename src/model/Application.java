@@ -26,6 +26,9 @@ import java.io.FileWriter;
 
 import java.net.URI;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import view.*;
 import controller.*;
 
@@ -56,6 +59,9 @@ public class Application {
 	
 	/** The Constant RETOUR_ZOOM_INITIAL. */
 	public final static float RETOUR_ZOOM_INITIAL = -2;
+
+	/** The DOSSIE r_ images. */
+	private final String DOSSIER_IMAGES = "img/";
 	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
@@ -486,7 +492,7 @@ AUTRE};
 							else {
 								gaucheDroite = "tout_droit";
 							}
-							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_DATA + "tourner_" + gaucheDroite + ".gif");
+							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_IMAGES + "tourner_" + gaucheDroite + ".gif");
 							lenTotale += lenRoute;
 							lenRoute = 0;
 						}
@@ -897,7 +903,7 @@ AUTRE};
 			try{
 				
 				JFileChooser jFileChooser = new JFileChooser();
-				jFileChooser.setSelectedFile(new File("Mon-Itinéraire"));
+				jFileChooser.setSelectedFile(new File("Mon Itinéraire du " + (LocalDateTime.now()).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) ));
 				 int retrival = jFileChooser.showSaveDialog(fenetre);
 				 if (retrival == JFileChooser.APPROVE_OPTION) {
 					try 
@@ -979,54 +985,6 @@ AUTRE};
 		}
 	}
 
-	
-	/**
-	 * Change starting point color (green, blue, red).
-	 */
-	public void setStartingPointColorToBlue(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.BLUE);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setStartingPointColorToRed(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.RED);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setStartingPointColorToGreen(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurDepart(Color.GREEN);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	/**
-	 * Change arrival point color (green, blue, red).
-	 */
-	public void setArrivalPointColorToBlue(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.BLUE);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setArrivalPointColorToRed(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.RED);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
-
-	public void setArrivalPointColorToGreen(){
-
-		this.fenetre.getPanneauVue().getCarte().setCouleurArrivee(Color.GREEN);
-		this.fenetre.getContentPane().revalidate();
-		this.fenetre.getContentPane().repaint();
-	}
 	
 	/**
 	 * Close.
