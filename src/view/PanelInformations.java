@@ -253,11 +253,11 @@ public class PanelInformations extends JPanel{
 		dlmInfos.addElement(new String("D\u00e9part : " + ((depart == -1) ? "-" : "Point "+ new Integer(depart).toString())));
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
-		// dlmInfos.addElement(new String("Itineraire: "));
-		// for(Object s: dlmFeuilleRoute.toArray()){
-		// 	dlmInfos.addElement(s);
-		// 	// ajouterRoute(s.toString());
-		// }
+		dlmInfos.addElement(new String("Itineraire: "));
+		for(Object s: dlmFeuilleRoute.toArray()){
+			dlmInfos.addElement(s);
+			// ajouterRoute(s.toString());
+		}
 	}
 
 	private void refaireFeuilleDeRoute(){

@@ -21,8 +21,7 @@ public class MenuBar extends JMenuBar {
 	
 	/** The exit. */
 	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
-	                  changeStartingPointColor, changeArrivalPointColor, ItineraryColorOption1,
-					  ItineraryColorOption2, ItineraryColorOption3, StartingPointColor1, StartingPointColor2, StartingPointColor3,
+	                  changeStartingPointColor, changeArrivalPointColor, StartingPointColor1, StartingPointColor2, StartingPointColor3,
 					  ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3; 
 	
 	/** The view anti aliasing. */
@@ -52,8 +51,8 @@ public class MenuBar extends JMenuBar {
 		viewMenu.add(minimizePanelInfos);
 
 		// The menu to manage(change) the colors of map components.
-		colorManagmentMenu = new JMenu("Colors");
-		changeItineraryColor = new JMenu("Itinerary Color");
+		colorManagmentMenu = new JMenu("Change colors");
+		changeItineraryColor = new JMenuItem("Itinerary Color");
 		changeStartingPointColor = new JMenu("Starting Point Color");
 		changeArrivalPointColor = new JMenu("Arrival Point Color");
 		colorManagmentMenu.add(changeItineraryColor);
@@ -63,15 +62,6 @@ public class MenuBar extends JMenuBar {
 		/* 
 		 * Colors options
 		*/
-
-		// Itinerary
-		ItineraryColorOption1 = new JMenuItem("IC - vert");
-        ItineraryColorOption2 = new JMenuItem("IC - bleu");
-		ItineraryColorOption3 = new JMenuItem("IC - rouge");
-
-		changeItineraryColor.add(ItineraryColorOption1);
-		changeItineraryColor.add(ItineraryColorOption2);
-		changeItineraryColor.add(ItineraryColorOption3);
 
 		// Arrival point
 		ArrivalPointColor1 = new JMenuItem("AC - rouge"); 
@@ -135,8 +125,9 @@ public class MenuBar extends JMenuBar {
 	 */
 	public JMenuItem[] getItems(){
 		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, 
-			                   ItineraryColorOption1, ItineraryColorOption2, ItineraryColorOption3, StartingPointColor1, 
-							   StartingPointColor2, StartingPointColor3, ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3};
+			                   changeItineraryColor, StartingPointColor1, 
+							   StartingPointColor2, StartingPointColor3, ArrivalPointColor1, ArrivalPointColor2, ArrivalPointColor3,
+							   utilisationMode, editionMode};
 		
 	}
 }

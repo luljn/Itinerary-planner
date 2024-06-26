@@ -60,11 +60,11 @@ public class MenuController implements ActionListener {
 			app.hideOrSeeInfosPanel();
 		}
 		// To change Itinerary color.
-		if(itemName.equals("IC - vert")){
-			app.setItineraryColorToGreen();
+		if(itemName.equals("Itinerary Color")){
+			app.choixCouleur();
 		}
 		if(itemName.equals("IC - bleu")){
-			app.setItineraryColorToBlue();
+			app.afficherMenuContextuel();
 		}
 		if(itemName.equals("IC - rouge")){
 			app.setItineraryColorToRed();
