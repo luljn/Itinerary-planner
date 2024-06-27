@@ -176,9 +176,4 @@ public class AppWindow extends JFrame{
 	public JMenuItem[] getMenuBarItems(){
 		return menuBar.getItems();
 	}
-	
-	// public Map getMap(){
-
-	// 	return this.carte;
-	// }
 }
