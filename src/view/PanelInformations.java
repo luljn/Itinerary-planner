@@ -261,9 +261,9 @@ public class PanelInformations extends JPanel{
 	
 	public ArrayList<String> getItinerary(){
 		ArrayList<String> itinerary = new ArrayList<String>();
-		itinerary.add("Départ : "+ depart + " Arrivée : "+arrivee);
+		itinerary.add("Départ : point " + depart + "\nArrivée : point" + arrivee);
 		itinerary.add("Longueur du trajet : " + ((longueur_trajet == null) ? "-" : longueur_trajet));
-		itinerary.add("Votre itinéraire: "+System.getProperty("line.separator")+System.getProperty("line.separator"));
+		itinerary.add("\nVotre itinéraire: "+System.getProperty("line.separator")+System.getProperty("line.separator"));
 		for(Object s: dlmFeuilleRoute.toArray()){
 			itinerary.add(s.toString());
 		}
