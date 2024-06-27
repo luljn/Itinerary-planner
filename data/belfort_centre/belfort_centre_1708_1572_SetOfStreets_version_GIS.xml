@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-<carte ville="belfort centre" src="belfort_centre_1708_1572.gif">
+<carte ville="belfort centre" src="belfort_centre/belfort_centre_1708_1572.gif">
 	<ville nom="belfort centre">
 		<points>
+			<point num="4951097" x="394.0" y="1389.0"></point>
 			<point num="2426" x="375.0" y="1052.0"></point>
 			<point num="3951097" x="74.0" y="868.0"></point>
 			<point num="3951096" x="91.0" y="833.0"></point>
@@ -602,10 +603,12 @@
 			<pt num="1159"></pt>
 			<pt num="1160"></pt>
 			<pt num="1161"></pt>
+			<pt num="4951097"></pt>
 		</rue>
 		<rue nom = "BELGRADE" sens="2">
 			<pt num="1159"></pt>
 			<pt num="1185"></pt>
+			<pt num="4951097"></pt>
 		</rue>
 		<rue nom = "REIMS" sens="2">
 			<pt num="2692"></pt>

@@ -71,5 +71,12 @@ public class MenuController implements ActionListener {
 		if(itemName.equals("Arrival Point Color")){
 			app.choixCouleurArrivee();
 		}
+		// To change the mode of the application (utilisation or edition).
+		if(itemName.equals("Utilisation")){
+			app.changeMode();
+		}
+		if(itemName.equals("Edition")){
+			app.changeMode();
+		}
 	}
 }

@@ -255,13 +255,10 @@ public class PanelInformations extends JPanel{
 		// }
 	}
 
-	private void refaireFeuilleDeRoute(){
-
-	}
 	
 	public ArrayList<String> getItinerary(){
 		ArrayList<String> itinerary = new ArrayList<String>();
-		itinerary.add("Départ : point " + depart + "\nArrivée : point" + arrivee);
+		itinerary.add("Départ : Point " + depart + "\nArrivée : Point " + arrivee);
 		itinerary.add("Longueur du trajet : " + ((longueur_trajet == null) ? "-" : longueur_trajet));
 		itinerary.add("\nVotre itinéraire: "+System.getProperty("line.separator")+System.getProperty("line.separator"));
 		for(Object s: dlmFeuilleRoute.toArray()){

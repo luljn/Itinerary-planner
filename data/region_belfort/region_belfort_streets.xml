@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<carte ville="aireurbaine" src="region_belfort_routes_fleuves_habitats.gif">
+<carte ville="aireurbaine" src="region_belfort/region_belfort_routes_fleuves_habitats.gif">
 	<ville nom="aireurbaine">
 		<points>
 			<point num="130075" x="5354.0" y="2875.0"></point>

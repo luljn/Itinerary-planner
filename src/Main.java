@@ -14,7 +14,7 @@ public class Main {
 	 * Creates the and show gui.
 	 */
 	public static void createAndShowGUI() {
-		new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
+		new Application("belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
 	}
 	
     /**

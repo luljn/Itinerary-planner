@@ -58,7 +58,7 @@ public class RoadNetwork {
 		points.clear();
 		nombreConnexions = 0;
 		
-		// Variable générales pour le fichier XML
+		// Variable gï¿½nï¿½rales pour le fichier XML
 		Element xmlRacine;
 		int i, j, k;
 		
@@ -220,6 +220,10 @@ public class RoadNetwork {
 	public String getNomFichierImage() {
 		return nomFichierImage;
 	}
+
+	public void setNomFichierImage(String nomFichierImage) {
+		this.nomFichierImage = nomFichierImage;
+	}
 	
 	// Renvoie le nom du fichier Xml
 	/**
@@ -229,5 +233,9 @@ public class RoadNetwork {
 	 */
 	public String getNomFichierXml() {
 		return nomFichierXml;
+	}
+
+	public void setNomFichierXml(String nomFichierXml) {
+		this.nomFichierXml = nomFichierXml;
 	}
 }

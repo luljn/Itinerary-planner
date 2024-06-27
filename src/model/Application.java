@@ -62,6 +62,8 @@ public class Application {
 
 	/** The DOSSIE r_ images. */
 	private final String DOSSIER_IMAGES = "img/";
+
+	private final String DOSSIER_DATA = "data/";
 	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
@@ -178,8 +180,9 @@ AUTRE};
 	/** The old_zoom. */
 	private float old_zoom = ZOOM_INITIAL;
 
+	private boolean mode_utilisation;
 	/** Le dossier qui contient le fichier xml et son image associée. */
-	private String DOSSIER_DATA;
+	// private final String DOSSIER_DATA = 'data/';
 	//
 	private String fichierXML;
 	
@@ -187,20 +190,21 @@ AUTRE};
 	 * Instantiates a new application.
 	 *
 	 * @param fichierXml the fichier xml
-	 * @param dossierData Le dossier qui contient le fichier xml et son image associée.
 	 */
-	public Application(String fichierXml, String dossierData) {
+	public Application(String fichierXml) {
 
 		this.fichierXML = fichierXml;
-		this.DOSSIER_DATA = dossierData;
+		// this.DOSSIER_DATA = dossierData;
 		// Construction des diff�rents �l�ments de l'application
 		reseau_routier = new RoadNetwork();
-		reseau_routier.parseXml(DOSSIER_DATA + fichierXML);
+		reseau_routier.setNomFichierXml(fichierXml);
+		reseau_routier.parseXml(DOSSIER_DATA + fichierXml);
 		
 		lienCarte = DOSSIER_DATA + reseau_routier.getNomFichierImage();
 		new ImageIcon(lienCarte);
 		
-		
+		this.mode_utilisation = true;  // By default the app is in utilisation mode.
+
 		controlleur_boutons = new ButtonsController(this);
 		controlleur_slider = new SliderController(this);
 		controlleur_carte = new MapController(this);
@@ -427,6 +431,7 @@ AUTRE};
 	 * Chercher itineraire.
 	 */
 	private void chercherItineraire() {
+		if(this.mode_utilisation){
 		// R�soue l'itin�raire et ajoute les points � la carte
 		fenetre.getPanneauVue().getCarte().viderPoints();
 		if (depart == arrivee) {
@@ -453,6 +458,7 @@ AUTRE};
 			else if (arrivee >= 0) {
 				fenetre.getPanneauVue().getCarte().ajouterPoint(plus_court_chemin.getNodeCoords(arrivee));
 			}
+		}
 		}
 	}
 	
@@ -970,19 +976,38 @@ AUTRE};
 
 		this.fenetre.dispose();
 
-		if(getFichierXML() == "belfort_centre_1708_1572_SetOfStreets_version_GIS.xml" && getDossierData() == "data/belfort_centre/" ){
+		if(this.getFichierXML() == "belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml"){
 
-			new Application("region_belfort_streets.xml", "data/region_belfort/");
-			// this.setFichierXML("region_belfort_streets.xml");
-			// this.setDossierData("data/region_belfort/");
+			new Application("region_belfort/region_belfort_streets.xml");
+			// this.reseau_routier.setNomFichierXml("region_belfort/region_belfort_streets.xml");
+			// this.lienCarte = DOSSIER_DATA + this.reseau_routier.getNomFichierImage();
+			// this.reseau_routier.parseXml(DOSSIER_DATA + this.reseau_routier.getNomFichierXml());
+			// new ImageIcon(lienCarte);
+			// this.fenetre.repaint();
+			// this.fenetre.revalidate();
 		}
 		
-		else if(getFichierXML() == "region_belfort_streets.xml" && getDossierData() == "data/region_belfort/" ){
+		else if(this.getFichierXML() == "region_belfort/region_belfort_streets.xml"){
 
-			new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
-			// this.setFichierXML("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
-			// this.setDossierData("data/belfort_centre/");
+			new Application("belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.reseau_routier.setNomFichierXml("belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.lienCarte = DOSSIER_DATA + this.reseau_routier.getNomFichierImage();
+			// this.reseau_routier.parseXml(DOSSIER_DATA + this.reseau_routier.getNomFichierXml());
+			// new ImageIcon(lienCarte);
+			// this.fenetre.repaint();
+			// this.fenetre.revalidate();
 		}
+	}
+
+	/*
+	 * To change the mode of the application.
+	 */
+	public void changeMode(){
+
+		this.mode_utilisation = !mode_utilisation;
+		this.fenetre.getPanneauVue().getCarte().viderPoints();
+		this.fenetre.repaint();
+		this.fenetre.revalidate();
 	}
 
 	
@@ -991,16 +1016,6 @@ AUTRE};
 	 */
 	public void close(){
 		fenetre.dispose();
-	}
-
-	public String getDossierData(){
-
-		return this.DOSSIER_DATA;
-	}
-
-	public void setDossierData(String path){
-
-		this.DOSSIER_DATA = path;
 	}
 
 	public String getFichierXML(){
