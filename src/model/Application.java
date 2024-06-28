@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -25,6 +26,9 @@ import java.io.FileWriter;
 
 import java.net.URI;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import view.*;
 import controller.*;
 
@@ -45,7 +49,7 @@ public class Application {
 	public final static float ZOOM_MIN = (float)0.1;
 	
 	/** The Constant ZOOM_INITIAL. */
-	public final static float ZOOM_INITIAL = (float) 0.5;
+	public final static float ZOOM_INITIAL = (float) 1;
 	
 	/** The Constant CRAN_ZOOM_PLUS. */
 	public final static float CRAN_ZOOM_PLUS = (float) 0.1;
@@ -55,6 +59,11 @@ public class Application {
 	
 	/** The Constant RETOUR_ZOOM_INITIAL. */
 	public final static float RETOUR_ZOOM_INITIAL = -2;
+
+	/** The DOSSIE r_ images. */
+	private final String DOSSIER_IMAGES = "img/";
+
+	private final String DOSSIER_DATA = "data/";
 	
 	/** The ECHELL e_ carte. */
 	private final double ECHELLE_CARTE = 7.5; // <ECHELLE_CARTE> metres = 1 px
@@ -171,8 +180,9 @@ AUTRE};
 	/** The old_zoom. */
 	private float old_zoom = ZOOM_INITIAL;
 
+	private String mode_utilisation;
 	/** Le dossier qui contient le fichier xml et son image associée. */
-	private String DOSSIER_DATA;
+	// private final String DOSSIER_DATA = 'data/';
 	//
 	private String fichierXML;
 	
@@ -180,20 +190,21 @@ AUTRE};
 	 * Instantiates a new application.
 	 *
 	 * @param fichierXml the fichier xml
-	 * @param dossierData Le dossier qui contient le fichier xml et son image associée.
 	 */
-	public Application(String fichierXml, String dossierData) {
+	public Application(String fichierXml) {
 
 		this.fichierXML = fichierXml;
-		this.DOSSIER_DATA = dossierData;
+		// this.DOSSIER_DATA = dossierData;
 		// Construction des diff�rents �l�ments de l'application
 		reseau_routier = new RoadNetwork();
-		reseau_routier.parseXml(DOSSIER_DATA + fichierXML);
+		reseau_routier.setNomFichierXml(fichierXml);
+		reseau_routier.parseXml(DOSSIER_DATA + fichierXml);
 		
 		lienCarte = DOSSIER_DATA + reseau_routier.getNomFichierImage();
 		new ImageIcon(lienCarte);
 		
-		
+		this.mode_utilisation = "Utilisation";  // By default the app is in utilisation mode.
+
 		controlleur_boutons = new ButtonsController(this);
 		controlleur_slider = new SliderController(this);
 		controlleur_carte = new MapController(this);
@@ -250,6 +261,7 @@ AUTRE};
 		fenetre.getPanneauVue().getCarte().ajouterEcouteurMenu(controlleur_menu_contextuel);
 		fenetre.getPanneauVue().getCarte().ajouterEcouteurCarte(controlleur_carte);
 		fenetre.getPanneauVue().ajouterEcouteurScrollBar(controlleur_scroll_bar);
+		fenetre.getPanneauVue().ajouterEcouteurScrollBarKey(controlleur_scroll_bar);
 		for( JMenuItem item : fenetre.getMenuBarItems()){ item.addActionListener(controlleur_menu_bar);}
 	}
 	
@@ -419,7 +431,8 @@ AUTRE};
 	/**
 	 * Chercher itineraire.
 	 */
-	private void chercherItineraire() {
+	public void chercherItineraire() {
+		if(this.mode_utilisation == "Utilisation"){
 		// R�soue l'itin�raire et ajoute les points � la carte
 		fenetre.getPanneauVue().getCarte().viderPoints();
 		if (depart == arrivee) {
@@ -446,6 +459,7 @@ AUTRE};
 			else if (arrivee >= 0) {
 				fenetre.getPanneauVue().getCarte().ajouterPoint(plus_court_chemin.getNodeCoords(arrivee));
 			}
+		}
 		}
 	}
 	
@@ -485,7 +499,7 @@ AUTRE};
 							else {
 								gaucheDroite = "tout_droit";
 							}
-							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_DATA + "tourner_" + gaucheDroite + ".gif");
+							fenetre.getPanneauInfos().ajouterRoute(nomRoute + " (" + convertirUniteDistance(lenRoute, 1) + ")", DOSSIER_IMAGES + "tourner_" + gaucheDroite + ".gif");
 							lenTotale += lenRoute;
 							lenRoute = 0;
 						}
@@ -684,7 +698,26 @@ AUTRE};
 			fenetre.getPanneauVue().getCarte().setItineraireCouleur(newColor);
 		}
 		chercherItineraire();
-		
+	}
+
+	public void choixCouleurDepart() {
+		Color newColor = JColorChooser.showDialog(
+                fenetre, "Choisissez la nouvelle couleur du point de départ",
+                fenetre.getPanneauVue().getCarte().getDepartCouleur());
+		if (newColor != null){
+			fenetre.getPanneauVue().getCarte().setCouleurDepart(newColor);
+		}
+		chercherItineraire();
+	}
+
+	public void choixCouleurArrivee() {
+		Color newColor = JColorChooser.showDialog(
+                fenetre, "Choisissez la nouvelle couleur du point d'arrivée",
+                fenetre.getPanneauVue().getCarte().getArriveeCouleur());
+		if (newColor != null){
+			fenetre.getPanneauVue().getCarte().setCouleurArrivee(newColor);
+		}
+		chercherItineraire();
 	}
 
 	/**
@@ -746,18 +779,22 @@ AUTRE};
 	 * Sets the nearest point as start.
 	 */
 	public void setNearestPointAsStart() {
+		if(mode_utilisation == "Utilisation"){
 		setDepart(point_proche_souris);
 		fenetre.getPanneauVue().getCarte().setTypePointUnique(true);
 		chercherItineraire();
+		}
 	}	
 	
 	/**
 	 * Sets the nearest point as arrival.
 	 */
 	public void setNearestPointAsArrival() {
+		if(mode_utilisation == "Utilisation"){
 		setArrivee(point_proche_souris);
 		fenetre.getPanneauVue().getCarte().setTypePointUnique(false);
 		chercherItineraire();
+		}
 	}
 	
 	/**
@@ -827,10 +864,9 @@ AUTRE};
 	 */
 	public void hideOrSeeInfosPanel(){
 
-		JPanel panneauInfos = fenetre.getPanneauInfos();
-		panneauInfos.setVisible(!panneauInfos.isVisible());
-		fenetre.getContentPane().revalidate();
-		fenetre.getContentPane().repaint();
+		this.fenetre.getPanneauInfos().setVisible(!(this.fenetre.getPanneauInfos().isVisible()));
+		this.fenetre.getContentPane().revalidate();
+		this.fenetre.getContentPane().repaint();
 	}
 	
 	/**
@@ -878,7 +914,7 @@ AUTRE};
 			try{
 				
 				JFileChooser jFileChooser = new JFileChooser();
-				jFileChooser.setSelectedFile(new File("Mon-Itinéraire"));
+				jFileChooser.setSelectedFile(new File("Mon Itinéraire du " + (LocalDateTime.now()).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) ));
 				 int retrival = jFileChooser.showSaveDialog(fenetre);
 				 if (retrival == JFileChooser.APPROVE_OPTION) {
 					try 
@@ -945,36 +981,52 @@ AUTRE};
 
 		this.fenetre.dispose();
 
-		if(getFichierXML() == "belfort_centre_1708_1572_SetOfStreets_version_GIS.xml" && getDossierData() == "data/belfort_centre/" ){
+		if(this.getFichierXML() == "belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml"){
 
-			new Application("region_belfort_streets.xml", "data/region_belfort/");
-			// this.setFichierXML("region_belfort_streets.xml");
-			// this.setDossierData("data/region_belfort/");
+			new Application("region_belfort/region_belfort_streets.xml");
+			// this.reseau_routier.setNomFichierXml("region_belfort/region_belfort_streets.xml");
+			// this.lienCarte = DOSSIER_DATA + this.reseau_routier.getNomFichierImage();
+			// this.reseau_routier.parseXml(DOSSIER_DATA + this.reseau_routier.getNomFichierXml());
+			// new ImageIcon(lienCarte);
+			// this.fenetre.repaint();
+			// this.fenetre.revalidate();
 		}
 		
-		else if(getFichierXML() == "region_belfort_streets.xml" && getDossierData() == "data/region_belfort/" ){
+		else if(this.getFichierXML() == "region_belfort/region_belfort_streets.xml"){
 
-			new Application("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml", "data/belfort_centre/");
-			// this.setFichierXML("belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
-			// this.setDossierData("data/belfort_centre/");
+			new Application("belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.reseau_routier.setNomFichierXml("belfort_centre/belfort_centre_1708_1572_SetOfStreets_version_GIS.xml");
+			// this.lienCarte = DOSSIER_DATA + this.reseau_routier.getNomFichierImage();
+			// this.reseau_routier.parseXml(DOSSIER_DATA + this.reseau_routier.getNomFichierXml());
+			// new ImageIcon(lienCarte);
+			// this.fenetre.repaint();
+			// this.fenetre.revalidate();
 		}
 	}
+
+	/*
+	 * To change the mode of the application.
+	 */
+	public void changeMode(String mode){
+
+		this.mode_utilisation = mode;
+		this.fenetre.getPanneauVue().getCarte().viderPoints();
+		this.fenetre.repaint();
+		this.fenetre.revalidate();
+		JOptionPane.showMessageDialog(this.fenetre, "Vous venez de passer en mode  " + mode + ".", "Itinerary planner", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public String getModeUtilisation(){
+
+		return this.mode_utilisation;
+	}
+
 	
 	/**
 	 * Close.
 	 */
 	public void close(){
 		fenetre.dispose();
-	}
-
-	public String getDossierData(){
-
-		return this.DOSSIER_DATA;
-	}
-
-	public void setDossierData(String path){
-
-		this.DOSSIER_DATA = path;
 	}
 
 	public String getFichierXML(){
@@ -985,6 +1037,14 @@ AUTRE};
 	public void setFichierXML(String newFile){
 
 		this.fichierXML = newFile;
+	}
+
+	public RoadNetwork getReseauRoutier(){
+		return this.reseau_routier;
+	}
+
+	public AppWindow getFenetre(){
+		return this.fenetre;
 	}
 }
 

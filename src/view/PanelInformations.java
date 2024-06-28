@@ -115,14 +115,14 @@ public class PanelInformations extends JPanel{
 		
 		jlFeuilleRoute.setLayoutOrientation(JList.VERTICAL);
 		jlFeuilleRoute.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jlFeuilleRoute.setVisibleRowCount(-1);
-		// jlFeuilleRoute.setCellRenderer(new AfficheurElementListe());
+		jlFeuilleRoute.setVisibleRowCount(1);
+		jlFeuilleRoute.setCellRenderer(new AfficheurElementListe());
 		jspFeuilleRoute = new JScrollPane(jlFeuilleRoute);
-		jspFeuilleRoute.add(jlFeuilleRoute);
+		// jspFeuilleRoute.add(jlFeuilleRoute);
 		jspFeuilleRoute.setPreferredSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		// jspFeuilleRoute.setMinimumSize(new Dimension((int)l, (int)(h * (float)3/4)));
 		jspFeuilleRoute.setBorder(jspBorder);
-		jspFeuilleRoute.setVisible(true);
+		// jspFeuilleRoute.setVisible(true);
 		add(jspFeuilleRoute);
 		
 		
@@ -171,7 +171,6 @@ public class PanelInformations extends JPanel{
 		message1 = mess1;
 		message2 = mess2;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -182,7 +181,6 @@ public class PanelInformations extends JPanel{
 	public void setLongueurTrajet(String longueur) {
 		longueur_trajet = longueur;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -197,7 +195,6 @@ public class PanelInformations extends JPanel{
 		this.y = y;
 		this.idPoint = idPoint;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -208,7 +205,6 @@ public class PanelInformations extends JPanel{
 	public void updateZoom(float zoom) {
 		this.zoom = zoom;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -219,7 +215,6 @@ public class PanelInformations extends JPanel{
 	public void updateDepart(int d) {
 		depart = d;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}	
 	
 	/**
@@ -230,7 +225,6 @@ public class PanelInformations extends JPanel{
 	public void updateArrivee(int a) {
 		arrivee = a;
 		refaireInfos();
-		refaireFeuilleDeRoute();
 	}
 	
 	/**
@@ -243,37 +237,30 @@ public class PanelInformations extends JPanel{
 		if(message2 != null)
 			dlmInfos.addElement(message2);
 		dlmInfos.addElement(new String("Systeme d'unit\u00e9s : " + su));
-		
+		dlmInfos.addElement(new String(" "));
 		dlmInfos.addElement(new String("Point courant :"+idPoint));
 		dlmInfos.addElement(new String("Coordonn\u00e9e X : " + x));
 		dlmInfos.addElement(new String("Coordonn\u00e9e Y : " + y));
+		dlmInfos.addElement(new String(" "));
 		dlmInfos.addElement(new String("Zoom : " + (int)(zoom * 100) + " %"));
 		dlmInfos.addElement(new String(" "));
 		dlmInfos.addElement(new String("Longueur du trajet : " + ((longueur_trajet == null) ? "-" : longueur_trajet)));
 		dlmInfos.addElement(new String("D\u00e9part : " + ((depart == -1) ? "-" : "Point "+ new Integer(depart).toString())));
 		dlmInfos.addElement(new String("Arriv\u00e9e : " + ((arrivee == -1) ? "-" : "Point "+ new Integer(arrivee).toString())));
 		dlmInfos.addElement(new String(" "));
-		dlmInfos.addElement(new String("Itineraire: "));
+		// dlmInfos.addElement(new String("Itineraire: "));
 		// for(Object s: dlmFeuilleRoute.toArray()){
 		// 	dlmInfos.addElement(s);
 		// 	// ajouterRoute(s.toString());
 		// }
 	}
 
-	private void refaireFeuilleDeRoute(){
-
-		reinitialiserRoutes();
-		for(Object s: dlmFeuilleRoute.toArray()){
-			
-			ajouterRoute(s.toString());
-		}
-	}
 	
 	public ArrayList<String> getItinerary(){
 		ArrayList<String> itinerary = new ArrayList<String>();
-		itinerary.add("Depart : "+ depart + " Arrivee : "+arrivee);
+		itinerary.add("Départ : Point " + depart + "\nArrivée : Point " + arrivee);
 		itinerary.add("Longueur du trajet : " + ((longueur_trajet == null) ? "-" : longueur_trajet));
-		itinerary.add("Votre itineraire: "+System.getProperty("line.separator")+System.getProperty("line.separator"));
+		itinerary.add("\nVotre itinéraire: "+System.getProperty("line.separator")+System.getProperty("line.separator"));
 		for(Object s: dlmFeuilleRoute.toArray()){
 			itinerary.add(s.toString());
 		}

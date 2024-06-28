@@ -56,8 +56,27 @@ public class MenuController implements ActionListener {
 			app.changeAntiAliasing();
 		}
 		// To Hide (or see) the Infos Panel.
-		if(itemName.equals("Hide Infos Panel")){
+		if(itemName.equals("Hide or See Infos Panel")){
 			app.hideOrSeeInfosPanel();
+		}
+		// To change Itinerary color.
+		if(itemName.equals("Itinerary Color")){
+			app.choixCouleur();
+		}
+		// To change starting point color.
+		if(itemName.equals("Starting Point Color")){
+			app.choixCouleurDepart();
+		}
+		// To change arrival point color.
+		if(itemName.equals("Arrival Point Color")){
+			app.choixCouleurArrivee();
+		}
+		// To change the mode of the application (utilisation or edition).
+		if(itemName.equals("Utilisation")){
+			app.changeMode("Utilisation");
+		}
+		if(itemName.equals("Edition")){
+			app.changeMode("Edition");
 		}
 	}
 }

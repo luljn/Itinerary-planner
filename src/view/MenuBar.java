@@ -3,10 +3,12 @@ package view;
 
 import java.lang.reflect.Array;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -15,13 +17,14 @@ import javax.swing.JMenuItem;
 public class MenuBar extends JMenuBar {
 	
 	/** The help. */
-	private JMenu fileMenu, viewMenu, help;
+	private JMenu fileMenu, viewMenu, help, colorManagmentMenu, mode;
 	
 	/** The exit. */
-	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos; 
+	private JMenuItem fileExportItinerary, fileChangeMap, about, helpitem, exit, minimizePanelInfos, changeItineraryColor,
+	                  changeStartingPointColor, changeArrivalPointColor; 
 	
 	/** The view anti aliasing. */
-	private JCheckBoxMenuItem viewAntiAliasing;
+	private JCheckBoxMenuItem viewAntiAliasing, utilisationMode, editionMode;
 	
 	/**
 	 * Instantiates a new menu bar.
@@ -40,25 +43,46 @@ public class MenuBar extends JMenuBar {
 		
 		viewMenu = new JMenu("View");
 		viewAntiAliasing = new JCheckBoxMenuItem("AntiAliasing");
-		minimizePanelInfos = new JMenuItem("Hide Infos Panel");
+		minimizePanelInfos = new JMenuItem("Hide or See Infos Panel");
 		// minimizePanelInfos.addActionListener(null);
 		viewAntiAliasing.setState(true);
 		viewMenu.add(viewAntiAliasing);
 		viewMenu.add(minimizePanelInfos);
+
+		// The menu to manage(change) the colors of map components.
+		colorManagmentMenu = new JMenu("Change colors");
+		changeItineraryColor = new JMenuItem("Itinerary Color");
+		changeStartingPointColor = new JMenuItem("Starting Point Color");
+		changeArrivalPointColor = new JMenuItem("Arrival Point Color");
+		colorManagmentMenu.add(changeItineraryColor);
+		colorManagmentMenu.add(changeStartingPointColor);
+		colorManagmentMenu.add(changeArrivalPointColor);
 		
 		help = new JMenu("?");
 		helpitem = new JMenuItem("Help me !");
 		about = new JMenuItem("About");
 		help.add(helpitem);
 		help.add(about);
+
+		/*
+		 * Mode (utilisation or edition)
+		 */
+
+		mode = new JMenu("Mode");
+		ButtonGroup group = new ButtonGroup(); // To select one option at a time.
+		utilisationMode = new JCheckBoxMenuItem("Utilisation");
+		editionMode = new JCheckBoxMenuItem("Edition");
+		group.add(utilisationMode);
+		group.add(editionMode);
+		utilisationMode.setState(true);
+		mode.add(utilisationMode);
+		mode.add(editionMode);
 		
 		add(fileMenu);
 		add(viewMenu);
+		add(mode);
+		add(colorManagmentMenu);
 		add(help);
-	
-	
-		
-		
 	}
 	
 	/**
@@ -76,7 +100,8 @@ public class MenuBar extends JMenuBar {
 	 * @return the items
 	 */
 	public JMenuItem[] getItems(){
-		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, about, helpitem, exit};
+		return new JMenuItem[]{fileExportItinerary, fileChangeMap, viewAntiAliasing, minimizePanelInfos, about, helpitem, exit, 
+			                   changeItineraryColor, changeStartingPointColor, changeArrivalPointColor, utilisationMode, editionMode};
 		
 	}
 }

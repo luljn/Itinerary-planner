@@ -8,6 +8,10 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -58,7 +62,7 @@ public class RoadNetwork {
 		points.clear();
 		nombreConnexions = 0;
 		
-		// Variable g�n�rales pour le fichier XML
+		// Variable g�n�rales pour le fichier XML
 		Element xmlRacine;
 		int i, j, k;
 		
@@ -220,6 +224,10 @@ public class RoadNetwork {
 	public String getNomFichierImage() {
 		return nomFichierImage;
 	}
+
+	public void setNomFichierImage(String nomFichierImage) {
+		this.nomFichierImage = nomFichierImage;
+	}
 	
 	// Renvoie le nom du fichier Xml
 	/**
@@ -229,5 +237,50 @@ public class RoadNetwork {
 	 */
 	public String getNomFichierXml() {
 		return nomFichierXml;
+	}
+
+	public void setNomFichierXml(String nomFichierXml) {
+		this.nomFichierXml = nomFichierXml;
+	}
+
+	/*
+	 * To add a point to the xml file and on the graph.
+	 */
+	public void addPointToGraph(String fichierXml, int num, double x, double y){
+		NodeList balisePoints;
+		Element xmlRacine;
+
+		try {
+			
+			DocumentBuilderFactory fabrique = DocumentBuilderFactory.newInstance();
+			DocumentBuilder constructeur = fabrique.newDocumentBuilder();
+			File xml = new File(fichierXml);
+			Document document = constructeur.parse(xml);
+			
+			// Lecture et traitement des donn�es
+			xmlRacine = document.getDocumentElement();
+
+			balisePoints = xmlRacine.getElementsByTagName("points");
+			Element points = (Element) balisePoints.item(0);
+
+			// Créer un nouvel élément <point>
+			Element newPoint = document.createElement("point");
+			newPoint.setAttribute("num", Integer.toString(num));
+			newPoint.setAttribute("x", Double.toString(x));
+			newPoint.setAttribute("y", Double.toString(y));
+			// Ajouter le nouvel élément <point> à l'élément <points>
+			points.appendChild(newPoint);
+
+			// Sauvegarder les modifications dans le fichier XML
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(xml);
+            transformer.transform(source, result);
+		} 
+		
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }
