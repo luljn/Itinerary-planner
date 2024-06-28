@@ -1,7 +1,7 @@
 package controller;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import javax.swing.*;
+import java.awt.event.*;
 
 import model.Application;
 
@@ -9,10 +9,12 @@ import model.Application;
 /**
  * The Class ScrollBarController.
  */
-public class ScrollBarController implements MouseListener{
+public class ScrollBarController implements MouseListener, KeyListener{
 
 	/** The app. */
 	private Application app;
+
+	private boolean isShiftPressed;
 	
 	/**
 	 * Instantiates a new scroll bar controller.
@@ -21,6 +23,7 @@ public class ScrollBarController implements MouseListener{
 	 */
 	public ScrollBarController(Application app){
 		this.app = app;
+		this.isShiftPressed = false;
 	}
 	
 	/* (non-Javadoc)
@@ -28,6 +31,17 @@ public class ScrollBarController implements MouseListener{
 	 */
 	public void mouseClicked(MouseEvent e) {
 		// app.updateCentre();
+		if(app.getModeUtilisation() == "Utilisation"){
+			app.updateCentre();
+			app.chercherItineraire();
+			app.getFenetre().repaint();
+			app.getFenetre().revalidate();
+		}
+		if(app.getModeUtilisation() == "Edition"){
+			if (this.isShiftPressed && SwingUtilities.isLeftMouseButton(e)) {
+                app.getReseauRoutier().addPointToGraph(app.getFichierXML(), 7777777, 100.0, 100.0);
+            }
+		}
 	}
 
 	/* (non-Javadoc)
@@ -59,4 +73,23 @@ public class ScrollBarController implements MouseListener{
 		app.updateCentre();
 	}
 	
+	@Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            this.isShiftPressed = true;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            this.isShiftPressed = false;
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // Non utilisé, mais doit être implémenté
+    }
+
 }

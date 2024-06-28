@@ -73,10 +73,10 @@ public class MenuController implements ActionListener {
 		}
 		// To change the mode of the application (utilisation or edition).
 		if(itemName.equals("Utilisation")){
-			app.changeMode();
+			app.changeMode("Utilisation");
 		}
 		if(itemName.equals("Edition")){
-			app.changeMode();
+			app.changeMode("Edition");
 		}
 	}
 }

@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 
 import javax.swing.*;
@@ -89,5 +90,10 @@ public class PanelView extends JScrollPane {
 	public void ajouterEcouteurScrollBar(MouseListener ecouteur) {
 		this.getHorizontalScrollBar().addMouseListener(ecouteur);
 		this.getVerticalScrollBar().addMouseListener(ecouteur);
+	}  
+
+	public void ajouterEcouteurScrollBarKey(KeyListener ecouteur) {
+		this.addKeyListener(ecouteur);
+		this.setFocusable(true);
 	}
 }

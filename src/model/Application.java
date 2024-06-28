@@ -180,7 +180,7 @@ AUTRE};
 	/** The old_zoom. */
 	private float old_zoom = ZOOM_INITIAL;
 
-	private boolean mode_utilisation;
+	private String mode_utilisation;
 	/** Le dossier qui contient le fichier xml et son image associée. */
 	// private final String DOSSIER_DATA = 'data/';
 	//
@@ -203,7 +203,7 @@ AUTRE};
 		lienCarte = DOSSIER_DATA + reseau_routier.getNomFichierImage();
 		new ImageIcon(lienCarte);
 		
-		this.mode_utilisation = true;  // By default the app is in utilisation mode.
+		this.mode_utilisation = "Utilisation";  // By default the app is in utilisation mode.
 
 		controlleur_boutons = new ButtonsController(this);
 		controlleur_slider = new SliderController(this);
@@ -261,6 +261,7 @@ AUTRE};
 		fenetre.getPanneauVue().getCarte().ajouterEcouteurMenu(controlleur_menu_contextuel);
 		fenetre.getPanneauVue().getCarte().ajouterEcouteurCarte(controlleur_carte);
 		fenetre.getPanneauVue().ajouterEcouteurScrollBar(controlleur_scroll_bar);
+		fenetre.getPanneauVue().ajouterEcouteurScrollBarKey(controlleur_scroll_bar);
 		for( JMenuItem item : fenetre.getMenuBarItems()){ item.addActionListener(controlleur_menu_bar);}
 	}
 	
@@ -430,8 +431,8 @@ AUTRE};
 	/**
 	 * Chercher itineraire.
 	 */
-	private void chercherItineraire() {
-		if(this.mode_utilisation){
+	public void chercherItineraire() {
+		if(this.mode_utilisation == "Utilisation"){
 		// R�soue l'itin�raire et ajoute les points � la carte
 		fenetre.getPanneauVue().getCarte().viderPoints();
 		if (depart == arrivee) {
@@ -778,18 +779,22 @@ AUTRE};
 	 * Sets the nearest point as start.
 	 */
 	public void setNearestPointAsStart() {
+		if(mode_utilisation == "Utilisation"){
 		setDepart(point_proche_souris);
 		fenetre.getPanneauVue().getCarte().setTypePointUnique(true);
 		chercherItineraire();
+		}
 	}	
 	
 	/**
 	 * Sets the nearest point as arrival.
 	 */
 	public void setNearestPointAsArrival() {
+		if(mode_utilisation == "Utilisation"){
 		setArrivee(point_proche_souris);
 		fenetre.getPanneauVue().getCarte().setTypePointUnique(false);
 		chercherItineraire();
+		}
 	}
 	
 	/**
@@ -1002,12 +1007,18 @@ AUTRE};
 	/*
 	 * To change the mode of the application.
 	 */
-	public void changeMode(){
+	public void changeMode(String mode){
 
-		this.mode_utilisation = !mode_utilisation;
+		this.mode_utilisation = mode;
 		this.fenetre.getPanneauVue().getCarte().viderPoints();
 		this.fenetre.repaint();
 		this.fenetre.revalidate();
+		JOptionPane.showMessageDialog(this.fenetre, "Vous venez de passer en mode  " + mode + ".", "Itinerary planner", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public String getModeUtilisation(){
+
+		return this.mode_utilisation;
 	}
 
 	
@@ -1026,6 +1037,14 @@ AUTRE};
 	public void setFichierXML(String newFile){
 
 		this.fichierXML = newFile;
+	}
+
+	public RoadNetwork getReseauRoutier(){
+		return this.reseau_routier;
+	}
+
+	public AppWindow getFenetre(){
+		return this.fenetre;
 	}
 }
 
